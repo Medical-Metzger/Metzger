@@ -1,527 +1,1072 @@
-/* =========================================
+/* =========================================================
    PRECIOUS KARLEY
-   OLD SCHOOL COMPUTER INTERFACE
-   ========================================= */
+   WINDOWS 98 / XP / GEOCITIES INTERFACE
+   ========================================================= */
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  background: #080808;
-  color: #d8d8d8;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 14px;
-  line-height: 1.6;
+    margin: 0;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            #151515 0,
+            #080808 45%,
+            #020202 100%
+        );
+
+    color: #000;
+
+    font-family:
+        "Tahoma",
+        "MS Sans Serif",
+        Arial,
+        sans-serif;
+
+    font-size: 12px;
 }
 
-/* =========================================
-   GENERAL
-   ========================================= */
 
-a {
-  color: inherit;
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+.desktop {
+    min-height: 100vh;
+
+    padding: 18px;
+
+    background-color: #080808;
+
+    background-image:
+        radial-gradient(
+            #222 1px,
+            transparent 1px
+        );
+
+    background-size: 12px 12px;
 }
 
-main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 30px;
+
+/* =========================================================
+   DESKTOP HEADER
+   ========================================================= */
+
+.desktop-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    max-width: 1200px;
+
+    margin: 0 auto 8px;
+
+    color: #888;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
 }
 
-section {
-  margin-bottom: 120px;
+
+/* =========================================================
+   MAIN WINDOWS
+   ========================================================= */
+
+.main-window {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    background: #c0c0c0;
+
+    border-top: 3px solid #ffffff;
+    border-left: 3px solid #ffffff;
+    border-right: 3px solid #333333;
+    border-bottom: 3px solid #333333;
+
+    box-shadow:
+        4px 4px 0 #000;
 }
 
-/* =========================================
-   TOP BAR
-   ========================================= */
 
-.top-bar {
-  position: sticky;
-  top: 0;
-  z-index: 100;
+/* =========================================================
+   WINDOWS TITLE BAR
+   ========================================================= */
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.title-bar {
+    display: flex;
 
-  padding: 10px 20px;
+    justify-content: space-between;
+    align-items: center;
 
-  background: #101010;
-  border-bottom: 1px solid #444;
+    height: 30px;
 
-  box-shadow: 0 3px 0 #000;
+    padding: 3px 4px 3px 6px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #000080,
+            #1084d7
+        );
+
+    color: white;
+
+    font-weight: bold;
 }
 
-.logo {
-  font-size: 13px;
-  color: #fff;
-  letter-spacing: 1px;
+
+.title-left {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
 }
 
-nav {
-  display: flex;
-  gap: 5px;
+
+.window-icon {
+    width: 20px;
+    height: 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #c0c0c0;
+
+    color: #000080;
+
+    border:
+        1px solid #fff;
 }
 
-/* =========================================
-   NAVIGATION BUTTONS
-   ========================================= */
-
-.nav-button {
-  display: inline-block;
-
-  padding: 4px 10px;
-
-  background: linear-gradient(
-    #444,
-    #222
-  );
-
-  color: #eee;
-
-  border-top: 2px solid #666;
-  border-left: 2px solid #666;
-  border-right: 2px solid #000;
-  border-bottom: 2px solid #000;
-
-  text-decoration: none;
-
-  font-size: 11px;
-  letter-spacing: 1px;
-}
-
-.nav-button:hover {
-  background: linear-gradient(
-    #eee,
-    #aaa
-  );
-
-  color: #000;
-  cursor: pointer;
-}
-
-.nav-button:active {
-  border-top-color: #000;
-  border-left-color: #000;
-  border-right-color: #666;
-  border-bottom-color: #666;
-}
-
-/* =========================================
-   HERO
-   ========================================= */
-
-.hero {
-  min-height: 85vh;
-
-  display: flex;
-  align-items: center;
-}
-
-/* =========================================
-   WINDOWS
-   ========================================= */
-
-.window {
-  width: 100%;
-
-  background: #111;
-
-  border: 1px solid #555;
-
-  box-shadow:
-    8px 8px 0 #000,
-    0 0 25px rgba(255, 255, 255, 0.03);
-}
-
-.window-title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  height: 30px;
-
-  padding: 0 8px;
-
-  background: linear-gradient(
-    90deg,
-    #333,
-    #181818
-  );
-
-  border-bottom: 1px solid #555;
-
-  color: #fff;
-
-  font-size: 11px;
-  letter-spacing: 1px;
-}
 
 .window-controls {
-  display: flex;
-  gap: 3px;
+    display: flex;
+
+    gap: 3px;
 }
 
-.window-controls span {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
-  width: 20px;
-  height: 19px;
+.window-controls button {
+    width: 21px;
+    height: 20px;
 
-  background: #292929;
+    padding: 0;
 
-  border-top: 1px solid #666;
-  border-left: 1px solid #666;
-  border-right: 1px solid #000;
-  border-bottom: 1px solid #000;
+    background: #c0c0c0;
 
-  font-size: 11px;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid #404040;
+    border-bottom: 2px solid #404040;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    font-weight: bold;
 }
 
-.window-content {
-  padding: 45px;
+
+/* =========================================================
+   MENU BAR
+   ========================================================= */
+
+.menu-bar {
+    height: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+
+    padding-left: 10px;
+
+    background: #c0c0c0;
+
+    border-bottom: 1px solid #808080;
+
+    color: #000;
 }
 
-/* =========================================
-   HERO TEXT
-   ========================================= */
-
-.terminal-green {
-  color: #8f8f8f;
-
-  font-size: 12px;
-  letter-spacing: 2px;
-
-  margin-bottom: 15px;
+.menu-bar span {
+    cursor: default;
 }
+
+
+/* =========================================================
+   ADDRESS BAR
+   ========================================================= */
+
+.address-area {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 5px;
+
+    background: #c0c0c0;
+
+    border-bottom: 2px solid #808080;
+}
+
+.address-area label {
+    font-weight: bold;
+}
+
+.address-box {
+    flex: 1;
+
+    height: 23px;
+
+    padding: 3px 7px;
+
+    background: white;
+
+    border-top: 2px solid #808080;
+    border-left: 2px solid #808080;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+
+    color: #333;
+
+    font-family: "Courier New", monospace;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.xp-button,
+.small-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 30px;
+
+    padding: 5px 15px;
+
+    background: #c0c0c0;
+
+    color: #000;
+
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid #404040;
+    border-bottom: 2px solid #404040;
+
+    box-shadow: 1px 1px 0 #000;
+
+    text-decoration: none;
+
+    font-family:
+        "Tahoma",
+        "MS Sans Serif",
+        Arial,
+        sans-serif;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.xp-button:hover,
+.small-button:hover {
+    background: #d8d8d8;
+}
+
+
+.xp-button:active,
+.small-button:active {
+    border-top-color: #404040;
+    border-left-color: #404040;
+
+    border-right-color: white;
+    border-bottom-color: white;
+
+    box-shadow: none;
+
+    transform: translate(1px, 1px);
+}
+
+
+.xp-button.primary {
+    background: #d4d0c8;
+
+    outline: 1px dotted #000;
+
+    outline-offset: -4px;
+}
+
+
+.xp-button.small {
+    min-height: 26px;
+
+    padding: 4px 10px;
+
+    font-size: 10px;
+}
+
+
+.small-button {
+    min-width: 45px;
+
+    min-height: 23px;
+
+    padding: 2px 10px;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   WEBSITE
+   ========================================================= */
+
+.website {
+    display: flex;
+
+    min-height: 700px;
+
+    background: #080808;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.sidebar {
+    width: 210px;
+
+    padding: 10px;
+
+    background: #c0c0c0;
+
+    border-right: 3px solid #404040;
+}
+
+
+.sidebar-window {
+    margin-bottom: 12px;
+
+    background: #fff;
+
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid #404040;
+    border-bottom: 2px solid #404040;
+}
+
+
+.blue-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    min-height: 24px;
+
+    padding: 4px 7px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #000080,
+            #1084d7
+        );
+
+    color: white;
+
+    font-size: 11px;
+
+    font-weight: bold;
+}
+
+
+.sidebar-content {
+    padding: 8px;
+
+    background: #eeeeee;
+}
+
+
+.folder-link {
+    display: block;
+
+    padding: 7px 4px;
+
+    color: #000080;
+
+    text-decoration: none;
+
+    font-size: 11px;
+}
+
+
+.folder-link:hover {
+    background: #000080;
+
+    color: white;
+
+    text-decoration: underline;
+}
+
+
+.system-info {
+    padding: 10px;
+
+    background: #eeeeee;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 10px;
+}
+
+
+.system-info p {
+    margin: 8px 0 0;
+
+    color: #666;
+}
+
+
+.system-info strong {
+    color: #000;
+}
+
+
+.online {
+    color: #008000 !important;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.content {
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 15px;
+
+    background:
+        radial-gradient(
+            #1d1d1d 1px,
+            transparent 1px
+        );
+
+    background-size: 10px 10px;
+
+    color: #ddd;
+}
+
+
+section {
+    margin-bottom: 45px;
+
+    scroll-margin-top: 20px;
+}
+
+
+/* =========================================================
+   WELCOME WINDOW
+   ========================================================= */
+
+.welcome-window,
+.project-window,
+.about-window,
+.contact-window {
+    background: #d4d0c8;
+
+    color: #000;
+
+    border-top: 3px solid white;
+    border-left: 3px solid white;
+    border-right: 3px solid #404040;
+    border-bottom: 3px solid #404040;
+
+    box-shadow:
+        3px 3px 0 #000;
+}
+
+
+.welcome-content {
+    padding: 45px;
+
+    min-height: 500px;
+
+    background:
+        radial-gradient(
+            #ddd 1px,
+            transparent 1px
+        );
+
+    background-size: 14px 14px;
+}
+
+
+.star-decoration {
+    color: #000080;
+
+    font-size: 18px;
+
+    letter-spacing: 8px;
+
+    margin-bottom: 20px;
+}
+
+
+.system-message {
+    display: inline-block;
+
+    padding: 4px 8px;
+
+    background: #000080;
+
+    color: white;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 10px;
+
+    margin-bottom: 15px;
+}
+
 
 h1 {
-  margin: 0;
+    margin: 0;
 
-  color: #fff;
+    color: #000080;
 
-  font-size: clamp(55px, 10vw, 130px);
+    font-family:
+        Impact,
+        "Arial Black",
+        sans-serif;
 
-  line-height: 0.85;
+    font-size: clamp(55px, 10vw, 115px);
 
-  letter-spacing: -5px;
+    line-height: .82;
+
+    letter-spacing: -3px;
+
+    text-shadow:
+        3px 3px 0 #808080;
 }
 
-.subtitle {
-  margin-top: 30px;
 
-  color: #aaa;
+.typing-line {
+    margin-top: 25px;
 
-  font-size: 14px;
-  letter-spacing: 3px;
+    color: #000;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
 }
 
-.intro {
-  max-width: 600px;
 
-  margin-top: 25px;
+.intro-text {
+    max-width: 650px;
 
-  color: #888;
+    margin: 20px 0;
+
+    color: #333;
+
+    font-family: "Courier New", monospace;
+
+    line-height: 1.7;
 }
 
-/* =========================================
-   OLD SCHOOL COMPUTER BUTTONS
-   ========================================= */
 
-.button-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+.button-group {
+    display: flex;
 
-  margin-top: 30px;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 25px;
 }
 
-.computer-button {
-  display: inline-block;
 
-  padding: 9px 16px;
+/* =========================================================
+   STATUS BAR
+   ========================================================= */
 
-  background: linear-gradient(
-    #3b3b3b,
-    #1c1c1c
-  );
+.status-bar,
+.browser-status {
+    display: flex;
 
-  color: #fff;
+    justify-content: space-between;
 
-  border-top: 2px solid #777;
-  border-left: 2px solid #777;
-  border-right: 2px solid #050505;
-  border-bottom: 2px solid #050505;
+    min-height: 24px;
 
-  box-shadow: 2px 2px 0 #000;
+    padding: 4px 7px;
 
-  text-decoration: none;
+    background: #c0c0c0;
 
-  font-family: "Courier New", monospace;
-  font-size: 12px;
-  font-weight: bold;
+    border-top: 2px solid #808080;
 
-  letter-spacing: 1px;
+    color: #000;
 
-  cursor: pointer;
+    font-family: "Courier New", monospace;
+
+    font-size: 10px;
 }
 
-.computer-button:hover {
-  background: linear-gradient(
-    #eee,
-    #aaa
-  );
 
-  color: #000;
+/* =========================================================
+   GEOCITIES BANNER
+   ========================================================= */
 
-  box-shadow: 2px 2px 0 #000;
+.geo-banner {
+    margin-top: 15px;
+
+    padding: 12px;
+
+    background: #000080;
+
+    border: 3px ridge #c0c0c0;
+
+    color: #ffff00;
+
+    text-align: center;
+
+    font-family: "Comic Sans MS", cursive;
+
+    font-size: 15px;
+
+    letter-spacing: 2px;
+
+    text-shadow:
+        2px 2px 0 #000;
 }
 
-.computer-button:active {
-  background: #222;
 
-  color: #fff;
+/* =========================================================
+   SECTION TITLE
+   ========================================================= */
 
-  border-top-color: #000;
-  border-left-color: #000;
-  border-right-color: #777;
-  border-bottom-color: #777;
+.section-title {
+    margin-bottom: 12px;
 
-  box-shadow: none;
+    padding: 8px 10px;
 
-  transform: translate(2px, 2px);
+    background: #c0c0c0;
+
+    color: #000;
+
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid #404040;
+    border-bottom: 2px solid #404040;
+
+    font-weight: bold;
+
+    font-size: 13px;
 }
 
-.computer-button.small {
-  padding: 7px 11px;
-  font-size: 10px;
-}
 
-/* =========================================
-   SECTION HEADINGS
-   ========================================= */
-
-.section-heading {
-  margin-bottom: 25px;
-
-  color: #fff;
-
-  font-size: 15px;
-  letter-spacing: 3px;
-
-  border-bottom: 1px solid #333;
-
-  padding-bottom: 10px;
-}
-
-.section-heading span {
-  color: #777;
-}
-
-/* =========================================
-   PROJECTS
-   ========================================= */
+/* =========================================================
+   PROJECT GRID
+   ========================================================= */
 
 .project-grid {
-  display: grid;
+    display: grid;
 
-  grid-template-columns:
-    repeat(3, 1fr);
+    grid-template-columns:
+        repeat(3, 1fr);
 
-  gap: 20px;
+    gap: 15px;
 }
 
-.project {
-  min-height: 350px;
+
+.project-content {
+    padding: 12px;
+
+    background: #d4d0c8;
 }
 
-.project .window-content {
-  padding: 25px;
+
+.project-image {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 160px;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            #222,
+            #222 5px,
+            #111 5px,
+            #111 10px
+        );
+
+    border:
+        3px inset #c0c0c0;
+
+    color: #888;
+
+    text-align: center;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
 }
 
-.project-number {
-  font-size: 50px;
 
-  color: #333;
+.project-content h2 {
+    margin: 15px 0 5px;
 
-  line-height: 1;
+    color: #000080;
+
+    font-size: 16px;
 }
 
-.project h2 {
-  color: #fff;
 
-  font-size: 20px;
-  letter-spacing: 1px;
+.project-content p {
+    min-height: 75px;
+
+    color: #222;
+
+    font-size: 11px;
+
+    line-height: 1.5;
 }
 
-.project p {
-  color: #888;
 
-  font-size: 13px;
-}
-
-/* =========================================
+/* =========================================================
    ABOUT
-   ========================================= */
+   ========================================================= */
 
 .about-content {
-  display: grid;
+    display: grid;
 
-  grid-template-columns:
-    2fr 1fr;
+    grid-template-columns: 150px 1fr;
 
-  gap: 50px;
+    gap: 25px;
+
+    padding: 25px;
+
+    background: #d4d0c8;
 }
+
+
+.avatar {
+    width: 130px;
+    height: 130px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #000080;
+
+    border:
+        4px ridge #c0c0c0;
+
+    color: #ffff00;
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 70px;
+}
+
 
 .about-content h2,
 .contact-content h2 {
-  color: #fff;
+    margin: 5px 0 15px;
 
-  font-size: 40px;
+    color: #000080;
 
-  margin: 10px 0;
+    font-family: "Times New Roman", serif;
+
+    font-size: 30px;
 }
+
 
 .about-content p {
-  color: #888;
+    max-width: 650px;
 
-  max-width: 650px;
+    color: #222;
+
+    line-height: 1.7;
 }
 
-.specs {
-  border-left: 1px solid #444;
 
-  padding-left: 25px;
+.profile-table {
+    max-width: 600px;
+
+    margin-top: 20px;
+
+    border: 2px inset #c0c0c0;
 }
 
-.specs div {
-  margin-bottom: 25px;
+
+.profile-table div {
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 7px;
+
+    background: #eeeeee;
+
+    border-bottom: 1px solid #aaa;
 }
 
-.specs span {
-  display: block;
 
-  color: #666;
-
-  font-size: 10px;
-
-  letter-spacing: 2px;
+.profile-table span {
+    color: #666;
 }
 
-.specs strong {
-  color: #ddd;
 
-  font-size: 12px;
+.profile-table strong {
+    color: #000;
 }
 
-/* =========================================
-   LINKS
-   ========================================= */
 
-.links {
-  padding-bottom: 30px;
-}
-
-/* =========================================
+/* =========================================================
    CONTACT
-   ========================================= */
+   ========================================================= */
 
 .contact-content {
-  text-align: center;
+    padding: 45px;
 
-  padding: 60px 30px;
+    background: #d4d0c8;
+
+    text-align: center;
 }
+
 
 .contact-content p {
-  color: #888;
+    color: #222;
 
-  margin-bottom: 25px;
+    margin-bottom: 25px;
 }
 
-/* =========================================
-   FOOTER
-   ========================================= */
 
-footer {
-  display: flex;
+/* =========================================================
+   GUESTBOOK
+   ========================================================= */
 
-  justify-content: space-between;
+.guestbook {
+    margin: 40px auto;
 
-  padding: 20px 30px;
+    max-width: 450px;
 
-  border-top: 1px solid #333;
+    padding: 20px;
 
-  color: #555;
+    background: #c0c0c0;
 
-  font-size: 10px;
+    border:
+        4px ridge #c0c0c0;
 
-  letter-spacing: 1px;
+    color: #000;
+
+    text-align: center;
 }
 
-/* =========================================
+
+.guestbook-title {
+    margin-bottom: 10px;
+
+    color: #000080;
+
+    font-family: "Comic Sans MS", cursive;
+
+    font-size: 18px;
+
+    font-weight: bold;
+}
+
+
+.counter {
+    display: inline-block;
+
+    padding: 5px 12px;
+
+    background: #000;
+
+    border: 3px inset #888;
+
+    color: #00ff00;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 20px;
+
+    letter-spacing: 4px;
+}
+
+
+.tiny {
+    margin-bottom: 0;
+
+    font-family: "Comic Sans MS", cursive;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   BOTTOM
+   ========================================================= */
+
+.browser-status {
+    border-top: 2px solid white;
+
+    border-bottom: 2px solid #404040;
+}
+
+
+.desktop-footer {
+    display: flex;
+
+    justify-content: space-between;
+
+    max-width: 1200px;
+
+    margin: 10px auto 0;
+
+    color: #666;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
    MOBILE
-   ========================================= */
+   ========================================================= */
 
 @media (max-width: 800px) {
 
-  main {
-    padding: 15px;
-  }
+    .desktop {
+        padding: 5px;
+    }
 
-  .top-bar {
-    flex-direction: column;
-    align-items: flex-start;
+    .desktop-header {
+        display: none;
+    }
 
-    gap: 10px;
-  }
+    .menu-bar {
+        gap: 12px;
+    }
 
-  nav {
-    flex-wrap: wrap;
-  }
+    .website {
+        flex-direction: column;
+    }
 
-  .hero {
-    min-height: auto;
+    .sidebar {
+        width: 100%;
 
-    padding-top: 50px;
-  }
+        border-right: none;
 
-  .window-content {
-    padding: 25px;
-  }
+        border-bottom: 3px solid #404040;
+    }
 
-  h1 {
-    font-size: 60px;
-    letter-spacing: -3px;
-  }
+    .sidebar-window {
+        margin-bottom: 8px;
+    }
 
-  .project-grid {
-    grid-template-columns: 1fr;
-  }
+    .sidebar-content {
+        display: flex;
 
-  .about-content {
-    grid-template-columns: 1fr;
-  }
+        flex-wrap: wrap;
 
-  .specs {
-    border-left: none;
-    border-top: 1px solid #444;
+        gap: 3px;
+    }
 
-    padding-left: 0;
-    padding-top: 25px;
-  }
+    .folder-link {
+        padding: 6px 8px;
+    }
 
-  footer {
-    flex-direction: column;
-    gap: 10px;
-  }
+    .content {
+        padding: 8px;
+    }
 
+    .welcome-content {
+        padding: 25px 18px;
+
+        min-height: 450px;
+    }
+
+    h1 {
+        font-size: 58px;
+
+        letter-spacing: -2px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .avatar {
+        margin: 0 auto;
+    }
+
+    .profile-table div {
+        flex-direction: column;
+
+        gap: 3px;
+    }
+
+    .desktop-footer {
+        flex-direction: column;
+
+        gap: 5px;
+
+        padding: 5px;
+    }
+
+    .address-box {
+        font-size: 9px;
+    }
 }
