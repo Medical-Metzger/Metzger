@@ -1,7 +1,7 @@
-/* =========================================================
+/* =========================================
    PRECIOUS KARLEY
-   WINDOWS 98 / XP / GEOCITIES INTERFACE
-   ========================================================= */
+   1999-2004 INTERNET / WINDOWS XP STYLE
+   ========================================= */
 
 * {
     box-sizing: border-box;
@@ -13,95 +13,171 @@ html {
 
 body {
     margin: 0;
+    padding: 25px 10px;
+    font-family: Tahoma, Verdana, Arial, sans-serif;
+    font-size: 13px;
+    color: #222;
 
-    background:
-        radial-gradient(
-            circle at 20% 20%,
-            #151515 0,
-            #080808 45%,
-            #020202 100%
-        );
-
-    color: #000;
-
-    font-family:
-        "Tahoma",
-        "MS Sans Serif",
-        Arial,
-        sans-serif;
-
-    font-size: 12px;
-}
-
-
-/* =========================================================
-   DESKTOP
-   ========================================================= */
-
-.desktop {
-    min-height: 100vh;
-
-    padding: 18px;
-
-    background-color: #080808;
+    background-color: #245a9b;
 
     background-image:
-        radial-gradient(
-            #222 1px,
-            transparent 1px
-        );
+        radial-gradient(#ffffff 1px, transparent 1px);
 
     background-size: 12px 12px;
 }
 
 
-/* =========================================================
-   DESKTOP HEADER
-   ========================================================= */
+/* =========================================
+   PAGE
+   ========================================= */
 
-.desktop-header {
-    display: flex;
-
-    justify-content: space-between;
-
-    max-width: 1200px;
-
-    margin: 0 auto 8px;
-
-    color: #888;
-
-    font-family: "Courier New", monospace;
-
-    font-size: 10px;
-
-    letter-spacing: 1px;
+.page {
+    width: 100%;
+    max-width: 1050px;
+    margin: auto;
 }
 
 
-/* =========================================================
-   MAIN WINDOWS
-   ========================================================= */
+/* =========================================
+   TOP HEADER
+   ========================================= */
 
-.main-window {
-    max-width: 1200px;
+.top-header {
+    background: linear-gradient(
+        to bottom,
+        #ffffff 0%,
+        #e8e8ff 50%,
+        #c7c7e8 100%
+    );
 
-    margin: 0 auto;
+    border: 3px ridge #ffffff;
+
+    padding: 18px;
+
+    text-align: center;
+
+    box-shadow: 4px 4px 0 #111;
+}
+
+.logo {
+    font-family: "Arial Black", Impact, sans-serif;
+
+    font-size: clamp(25px, 5vw, 46px);
+
+    color: #003399;
+
+    text-shadow:
+        2px 2px #ffffff,
+        4px 4px #ff66cc;
+
+    letter-spacing: 2px;
+}
+
+.sparkle {
+    color: #ff0099;
+}
+
+.tagline {
+    margin-top: 8px;
+
+    font-weight: bold;
+
+    color: #663399;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================================
+   WINDOWS MENU
+   ========================================= */
+
+.windows-menu {
+    display: flex;
+
+    gap: 0;
+
+    background: #eeeeee;
+
+    border-left: 3px ridge #ffffff;
+    border-right: 3px ridge #777777;
+    border-bottom: 2px solid #777777;
+
+    padding: 3px 5px;
+}
+
+.windows-menu span {
+    padding: 5px 13px;
+
+    cursor: default;
+}
+
+.windows-menu span:hover {
+    background: #000080;
+    color: white;
+}
+
+
+/* =========================================
+   ADDRESS BAR
+   ========================================= */
+
+.address-row {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    background: #dddddd;
+
+    padding: 5px;
+
+    border-left: 3px ridge #ffffff;
+    border-right: 3px ridge #777777;
+    border-bottom: 3px ridge #ffffff;
+}
+
+.address-label {
+    font-weight: bold;
+}
+
+.address-box {
+    flex: 1;
+
+    background: white;
+
+    border: 2px inset #eeeeee;
+
+    padding: 5px 8px;
+
+    color: #333;
+}
+
+.go-button {
+    background: #eeeeee;
+
+    border: 2px outset white;
+
+    padding: 4px 14px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================
+   MAIN WINDOW
+   ========================================= */
+
+.window {
+    margin-top: 10px;
 
     background: #c0c0c0;
 
-    border-top: 3px solid #ffffff;
-    border-left: 3px solid #ffffff;
-    border-right: 3px solid #333333;
-    border-bottom: 3px solid #333333;
+    border: 3px outset #eeeeee;
 
-    box-shadow:
-        4px 4px 0 #000;
+    box-shadow: 6px 6px 0 #111;
 }
-
-
-/* =========================================================
-   WINDOWS TITLE BAR
-   ========================================================= */
 
 .title-bar {
     display: flex;
@@ -109,689 +185,524 @@ body {
     justify-content: space-between;
     align-items: center;
 
-    height: 30px;
-
-    padding: 3px 4px 3px 6px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #000080,
-            #1084d7
-        );
-
     color: white;
 
     font-weight: bold;
+
+    padding: 4px 5px;
+
+    background:
+        linear-gradient(
+            to right,
+            #000080,
+            #1084d7
+        );
 }
-
-
-.title-left {
-    display: flex;
-
-    align-items: center;
-
-    gap: 7px;
-}
-
-
-.window-icon {
-    width: 20px;
-    height: 20px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    background: #c0c0c0;
-
-    color: #000080;
-
-    border:
-        1px solid #fff;
-}
-
 
 .window-controls {
     display: flex;
-
     gap: 3px;
 }
 
-
 .window-controls button {
-    width: 21px;
+    width: 22px;
     height: 20px;
 
     padding: 0;
 
     background: #c0c0c0;
 
-    border-top: 2px solid white;
-    border-left: 2px solid white;
-    border-right: 2px solid #404040;
-    border-bottom: 2px solid #404040;
-
-    font-family: Arial, sans-serif;
-
-    font-size: 11px;
-
-    font-weight: bold;
-}
-
-
-/* =========================================================
-   MENU BAR
-   ========================================================= */
-
-.menu-bar {
-    height: 25px;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 22px;
-
-    padding-left: 10px;
-
-    background: #c0c0c0;
-
-    border-bottom: 1px solid #808080;
-
-    color: #000;
-}
-
-.menu-bar span {
-    cursor: default;
-}
-
-
-/* =========================================================
-   ADDRESS BAR
-   ========================================================= */
-
-.address-area {
-    display: flex;
-
-    align-items: center;
-
-    gap: 7px;
-
-    padding: 5px;
-
-    background: #c0c0c0;
-
-    border-bottom: 2px solid #808080;
-}
-
-.address-area label {
-    font-weight: bold;
-}
-
-.address-box {
-    flex: 1;
-
-    height: 23px;
-
-    padding: 3px 7px;
-
-    background: white;
-
-    border-top: 2px solid #808080;
-    border-left: 2px solid #808080;
-    border-right: 2px solid white;
-    border-bottom: 2px solid white;
-
-    color: #333;
-
-    font-family: "Courier New", monospace;
-
-    overflow: hidden;
-}
-
-
-/* =========================================================
-   BUTTONS
-   ========================================================= */
-
-.xp-button,
-.small-button {
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    min-height: 30px;
-
-    padding: 5px 15px;
-
-    background: #c0c0c0;
-
-    color: #000;
-
-    border-top: 2px solid white;
-    border-left: 2px solid white;
-    border-right: 2px solid #404040;
-    border-bottom: 2px solid #404040;
-
-    box-shadow: 1px 1px 0 #000;
-
-    text-decoration: none;
-
-    font-family:
-        "Tahoma",
-        "MS Sans Serif",
-        Arial,
-        sans-serif;
-
-    font-size: 11px;
+    border: 2px outset white;
 
     font-weight: bold;
 
-    cursor: pointer;
+    line-height: 14px;
 }
 
-
-.xp-button:hover,
-.small-button:hover {
-    background: #d8d8d8;
-}
-
-
-.xp-button:active,
-.small-button:active {
-    border-top-color: #404040;
-    border-left-color: #404040;
-
-    border-right-color: white;
-    border-bottom-color: white;
-
-    box-shadow: none;
-
-    transform: translate(1px, 1px);
-}
-
-
-.xp-button.primary {
-    background: #d4d0c8;
-
-    outline: 1px dotted #000;
-
-    outline-offset: -4px;
-}
-
-
-.xp-button.small {
-    min-height: 26px;
-
-    padding: 4px 10px;
-
-    font-size: 10px;
-}
-
-
-.small-button {
-    min-width: 45px;
-
-    min-height: 23px;
-
-    padding: 2px 10px;
-
-    font-size: 10px;
-}
-
-
-/* =========================================================
-   WEBSITE
-   ========================================================= */
-
-.website {
+.window-content {
     display: flex;
 
-    min-height: 700px;
-
-    background: #080808;
+    align-items: stretch;
 }
 
 
-/* =========================================================
+/* =========================================
    SIDEBAR
-   ========================================================= */
+   ========================================= */
 
 .sidebar {
-    width: 210px;
+    width: 205px;
+
+    flex-shrink: 0;
 
     padding: 10px;
 
-    background: #c0c0c0;
-
-    border-right: 3px solid #404040;
-}
-
-
-.sidebar-window {
-    margin-bottom: 12px;
-
-    background: #fff;
-
-    border-top: 2px solid white;
-    border-left: 2px solid white;
-    border-right: 2px solid #404040;
-    border-bottom: 2px solid #404040;
-}
-
-
-.blue-header {
-    display: flex;
-
-    justify-content: space-between;
-    align-items: center;
-
-    min-height: 24px;
-
-    padding: 4px 7px;
-
     background:
         linear-gradient(
-            90deg,
-            #000080,
-            #1084d7
+            to bottom,
+            #eeeeff,
+            #ccccff
         );
 
-    color: white;
-
-    font-size: 11px;
-
-    font-weight: bold;
+    border-right: 3px ridge #ffffff;
 }
 
-
-.sidebar-content {
-    padding: 8px;
-
-    background: #eeeeee;
-}
-
-
-.folder-link {
-    display: block;
-
-    padding: 7px 4px;
-
-    color: #000080;
-
-    text-decoration: none;
-
-    font-size: 11px;
-}
-
-
-.folder-link:hover {
+.side-title {
     background: #000080;
 
     color: white;
 
-    text-decoration: underline;
+    padding: 6px;
+
+    font-weight: bold;
+
+    text-align: center;
+
+    margin-bottom: 8px;
+
+    border: 2px outset #eeeeee;
+}
+
+.space-top {
+    margin-top: 18px;
 }
 
 
-.system-info {
+/* =========================================
+   NAV BUTTONS
+   ========================================= */
+
+.nav-button {
+    display: block;
+
+    margin-bottom: 9px;
+
+    padding: 10px 7px;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    color: white;
+
+    font-weight: bold;
+
+    border: 3px outset #eeeeee;
+
+    box-shadow: 2px 2px #555;
+}
+
+.nav-button:active {
+    border-style: inset;
+
+    box-shadow: none;
+
+    transform: translate(2px, 2px);
+}
+
+.blue {
+    background: linear-gradient(#3399ff, #0055bb);
+}
+
+.purple {
+    background: linear-gradient(#bb66ff, #663399);
+}
+
+.pink {
+    background: linear-gradient(#ff66cc, #cc0066);
+}
+
+.green {
+    background: linear-gradient(#66cc66, #228822);
+}
+
+.nav-button:hover {
+    filter: brightness(1.25);
+}
+
+
+/* =========================================
+   SIDEBAR LINKS
+   ========================================= */
+
+.plain-link {
+    display: block;
+
+    padding: 5px;
+
+    color: #0000cc;
+
+    text-decoration: underline;
+
+    font-weight: bold;
+}
+
+.plain-link:hover {
+    background: yellow;
+
+    color: red;
+}
+
+
+/* =========================================
+   STATUS
+   ========================================= */
+
+.status-box {
+    margin-top: 20px;
+
     padding: 10px;
 
-    background: #eeeeee;
+    background: white;
 
-    font-family: "Courier New", monospace;
+    border: 2px inset #eeeeee;
 
-    font-size: 10px;
+    text-align: center;
 }
 
+.status-title {
+    font-weight: bold;
 
-.system-info p {
-    margin: 8px 0 0;
-
-    color: #666;
+    margin-bottom: 5px;
 }
-
-
-.system-info strong {
-    color: #000;
-}
-
 
 .online {
-    color: #008000 !important;
+    margin-top: 7px;
+
+    color: green;
+
+    font-weight: bold;
 }
 
 
-/* =========================================================
-   MAIN CONTENT
-   ========================================================= */
+/* =========================================
+   VISITOR COUNTER
+   ========================================= */
 
-.content {
+.counter {
+    margin-top: 15px;
+
+    padding: 8px;
+
+    text-align: center;
+
+    color: white;
+
+    background: #111;
+
+    border: 3px inset #777;
+
+    font-family: "Courier New", monospace;
+}
+
+.counter strong {
+    display: block;
+
+    margin-top: 5px;
+
+    padding: 4px;
+
+    background: black;
+
+    color: #00ff00;
+
+    font-size: 20px;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================================
+   MAIN AREA
+   ========================================= */
+
+.main {
     flex: 1;
 
     min-width: 0;
 
-    padding: 15px;
+    padding: 14px;
 
-    background:
-        radial-gradient(
-            #1d1d1d 1px,
-            transparent 1px
-        );
-
-    background-size: 10px 10px;
-
-    color: #ddd;
+    background: white;
 }
 
 
-section {
-    margin-bottom: 45px;
+/* =========================================
+   RAINBOW BANNER
+   ========================================= */
 
-    scroll-margin-top: 20px;
-}
+.rainbow-banner {
+    padding: 12px;
 
+    margin-bottom: 12px;
 
-/* =========================================================
-   WELCOME WINDOW
-   ========================================================= */
+    text-align: center;
 
-.welcome-window,
-.project-window,
-.about-window,
-.contact-window {
-    background: #d4d0c8;
-
-    color: #000;
-
-    border-top: 3px solid white;
-    border-left: 3px solid white;
-    border-right: 3px solid #404040;
-    border-bottom: 3px solid #404040;
-
-    box-shadow:
-        3px 3px 0 #000;
-}
-
-
-.welcome-content {
-    padding: 45px;
-
-    min-height: 500px;
-
-    background:
-        radial-gradient(
-            #ddd 1px,
-            transparent 1px
-        );
-
-    background-size: 14px 14px;
-}
-
-
-.star-decoration {
-    color: #000080;
-
-    font-size: 18px;
-
-    letter-spacing: 8px;
-
-    margin-bottom: 20px;
-}
-
-
-.system-message {
-    display: inline-block;
-
-    padding: 4px 8px;
-
-    background: #000080;
-
-    color: white;
-
-    font-family: "Courier New", monospace;
-
-    font-size: 10px;
-
-    margin-bottom: 15px;
-}
-
-
-h1 {
-    margin: 0;
-
-    color: #000080;
-
-    font-family:
-        Impact,
-        "Arial Black",
-        sans-serif;
-
-    font-size: clamp(55px, 10vw, 115px);
-
-    line-height: .82;
-
-    letter-spacing: -3px;
-
-    text-shadow:
-        3px 3px 0 #808080;
-}
-
-
-.typing-line {
-    margin-top: 25px;
-
-    color: #000;
-
-    font-family: "Courier New", monospace;
-
-    font-size: 13px;
+    font-size: 19px;
 
     font-weight: bold;
 
-    letter-spacing: 2px;
+    color: #000080;
+
+    border: 3px ridge white;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff66cc,
+            #ffff66,
+            #66ffff,
+            #66ff99,
+            #cc99ff,
+            #ff66cc
+        );
 }
 
 
-.intro-text {
-    max-width: 650px;
+/* =========================================
+   WELCOME BOX
+   ========================================= */
 
-    margin: 20px 0;
+.welcome-box {
+    border: 3px ridge #ffffff;
 
-    color: #333;
+    background: #eeeeee;
 
-    font-family: "Courier New", monospace;
+    margin-bottom: 12px;
+}
 
-    line-height: 1.7;
+.welcome-title {
+    background: linear-gradient(
+        to right,
+        #000080,
+        #3366cc
+    );
+
+    color: white;
+
+    font-weight: bold;
+
+    padding: 7px;
+}
+
+.welcome-content {
+    display: flex;
+
+    gap: 20px;
+
+    padding: 18px;
+}
+
+.computer-icon {
+    flex-shrink: 0;
+
+    width: 105px;
+    height: 105px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 65px;
+
+    background: linear-gradient(
+        135deg,
+        #dddddd,
+        #888888
+    );
+
+    border: 4px outset white;
+
+    box-shadow: 3px 3px #555;
+}
+
+.welcome-content h1 {
+    margin-top: 0;
+
+    color: #000080;
+
+    font-size: 25px;
+}
+
+.welcome-content p {
+    line-height: 1.6;
 }
 
 
-.button-group {
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+.button-row {
     display: flex;
 
     flex-wrap: wrap;
 
     gap: 10px;
 
-    margin-top: 25px;
-}
-
-
-/* =========================================================
-   STATUS BAR
-   ========================================================= */
-
-.status-bar,
-.browser-status {
-    display: flex;
-
-    justify-content: space-between;
-
-    min-height: 24px;
-
-    padding: 4px 7px;
-
-    background: #c0c0c0;
-
-    border-top: 2px solid #808080;
-
-    color: #000;
-
-    font-family: "Courier New", monospace;
-
-    font-size: 10px;
-}
-
-
-/* =========================================================
-   GEOCITIES BANNER
-   ========================================================= */
-
-.geo-banner {
     margin-top: 15px;
+}
 
-    padding: 12px;
+.big-button,
+.small-button {
+    display: inline-block;
 
-    background: #000080;
+    color: white;
 
-    border: 3px ridge #c0c0c0;
+    text-decoration: none;
 
-    color: #ffff00;
+    font-weight: bold;
+
+    border: 3px outset #ffffff;
+
+    box-shadow: 2px 2px #555;
+}
+
+.big-button {
+    padding: 11px 16px;
+
+    font-size: 14px;
+}
+
+.big-button:active,
+.small-button:active {
+    border-style: inset;
+
+    box-shadow: none;
+
+    transform: translate(2px, 2px);
+}
+
+.blue-button {
+    background: linear-gradient(#3399ff, #0044aa);
+}
+
+.pink-button {
+    background: linear-gradient(#ff77cc, #cc0066);
+}
+
+.green-button {
+    background: linear-gradient(#55cc66, #16882a);
+}
+
+.big-button:hover,
+.small-button:hover {
+    filter: brightness(1.25);
+}
+
+
+/* =========================================
+   NOTICE
+   ========================================= */
+
+.notice {
+    margin: 12px 0;
+
+    padding: 9px;
 
     text-align: center;
 
-    font-family: "Comic Sans MS", cursive;
+    background: #ffff99;
 
-    font-size: 15px;
+    border: 2px dashed #ff6600;
 
-    letter-spacing: 2px;
+    color: #cc3300;
 
-    text-shadow:
-        2px 2px 0 #000;
+    font-weight: bold;
 }
 
 
-/* =========================================================
-   SECTION TITLE
-   ========================================================= */
+/* =========================================
+   SECTION TITLES
+   ========================================= */
+
+section {
+    margin-bottom: 25px;
+    padding-top: 8px;
+}
 
 .section-title {
-    margin-bottom: 12px;
+    padding: 9px;
 
-    padding: 8px 10px;
+    color: white;
 
-    background: #c0c0c0;
-
-    color: #000;
-
-    border-top: 2px solid white;
-    border-left: 2px solid white;
-    border-right: 2px solid #404040;
-    border-bottom: 2px solid #404040;
+    font-size: 17px;
 
     font-weight: bold;
 
-    font-size: 13px;
+    border: 3px outset white;
+
+    text-shadow: 1px 1px #333;
 }
 
-
-/* =========================================================
-   PROJECT GRID
-   ========================================================= */
-
-.project-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 15px;
+.blue-title {
+    background: linear-gradient(
+        to right,
+        #003399,
+        #3399ff
+    );
 }
 
-
-.project-content {
-    padding: 12px;
-
-    background: #d4d0c8;
+.purple-title {
+    background: linear-gradient(
+        to right,
+        #663399,
+        #aa66ff
+    );
 }
 
-
-.project-image {
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    min-height: 160px;
-
-    background:
-        repeating-linear-gradient(
-            45deg,
-            #222,
-            #222 5px,
-            #111 5px,
-            #111 10px
-        );
-
-    border:
-        3px inset #c0c0c0;
-
-    color: #888;
-
-    text-align: center;
-
-    font-family: "Courier New", monospace;
-
-    font-size: 13px;
-
-    font-weight: bold;
-
-    letter-spacing: 2px;
+.pink-title {
+    background: linear-gradient(
+        to right,
+        #cc0066,
+        #ff66bb
+    );
 }
 
-
-.project-content h2 {
-    margin: 15px 0 5px;
-
-    color: #000080;
-
-    font-size: 16px;
-}
-
-
-.project-content p {
-    min-height: 75px;
-
-    color: #222;
-
-    font-size: 11px;
+.intro {
+    font-size: 14px;
 
     line-height: 1.5;
 }
 
 
-/* =========================================================
-   ABOUT
-   ========================================================= */
+/* =========================================
+   PROJECTS
+   ========================================= */
 
-.about-content {
+.projects {
     display: grid;
 
-    grid-template-columns: 150px 1fr;
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
 
-    gap: 25px;
-
-    padding: 25px;
-
-    background: #d4d0c8;
+    gap: 14px;
 }
 
+.project {
+    background: #eeeeee;
 
-.avatar {
-    width: 130px;
+    border: 3px outset white;
+
+    padding-bottom: 12px;
+
+    box-shadow: 2px 2px #777;
+}
+
+.project-top {
+    padding: 6px;
+
+    background: #000080;
+
+    color: white;
+
+    font-weight: bold;
+
+    text-align: center;
+}
+
+.project-image {
     height: 130px;
 
     display: flex;
@@ -799,204 +710,231 @@ h1 {
     align-items: center;
     justify-content: center;
 
-    background: #000080;
+    font-size: 60px;
 
-    border:
-        4px ridge #c0c0c0;
-
-    color: #ffff00;
-
-    font-family: "Times New Roman", serif;
-
-    font-size: 70px;
+    border-bottom: 3px ridge white;
 }
 
+.purple-project {
+    background:
+        linear-gradient(
+            135deg,
+            #9966cc,
+            #eeeeff
+        );
+}
 
-.about-content h2,
-.contact-content h2 {
-    margin: 5px 0 15px;
+.blue-project {
+    background:
+        linear-gradient(
+            135deg,
+            #3399ff,
+            #ccffff
+        );
+}
+
+.pink-project {
+    background:
+        linear-gradient(
+            135deg,
+            #ff66cc,
+            #ffffcc
+        );
+}
+
+.project h3,
+.project p {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.project h3 {
+    color: #000080;
+}
+
+.project p {
+    line-height: 1.4;
+}
+
+.small-button {
+    margin-left: 12px;
+
+    padding: 7px 10px;
+
+    background: linear-gradient(
+        #eeeeee,
+        #888888
+    );
 
     color: #000080;
 
-    font-family: "Times New Roman", serif;
-
-    font-size: 30px;
+    border-color: white;
 }
 
 
-.about-content p {
-    max-width: 650px;
+/* =========================================
+   ABOUT
+   ========================================= */
 
-    color: #222;
+.about-window {
+    margin-top: 12px;
 
-    line-height: 1.7;
+    background: #ffffee;
+
+    border: 3px ridge white;
 }
 
-
-.profile-table {
-    max-width: 600px;
-
-    margin-top: 20px;
-
-    border: 2px inset #c0c0c0;
-}
-
-
-.profile-table div {
-    display: flex;
-
-    justify-content: space-between;
-
+.about-header {
     padding: 7px;
 
-    background: #eeeeee;
+    background: #663399;
 
-    border-bottom: 1px solid #aaa;
+    color: white;
+
+    font-weight: bold;
 }
 
+.about-window p {
+    padding: 0 15px;
 
-.profile-table span {
-    color: #666;
+    line-height: 1.6;
 }
 
+.quote {
+    margin: 15px;
 
-.profile-table strong {
-    color: #000;
-}
+    padding: 12px;
 
+    background: #ffccff;
 
-/* =========================================================
-   CONTACT
-   ========================================================= */
+    border: 2px dashed #cc3399;
 
-.contact-content {
-    padding: 45px;
+    color: #663399;
 
-    background: #d4d0c8;
-
-    text-align: center;
-}
-
-
-.contact-content p {
-    color: #222;
-
-    margin-bottom: 25px;
-}
-
-
-/* =========================================================
-   GUESTBOOK
-   ========================================================= */
-
-.guestbook {
-    margin: 40px auto;
-
-    max-width: 450px;
-
-    padding: 20px;
-
-    background: #c0c0c0;
-
-    border:
-        4px ridge #c0c0c0;
-
-    color: #000;
-
-    text-align: center;
-}
-
-
-.guestbook-title {
-    margin-bottom: 10px;
-
-    color: #000080;
-
-    font-family: "Comic Sans MS", cursive;
-
-    font-size: 18px;
+    font-style: italic;
 
     font-weight: bold;
 }
 
 
-.counter {
-    display: inline-block;
+/* =========================================
+   CONTACT
+   ========================================= */
 
-    padding: 5px 12px;
+.contact-box {
+    display: flex;
 
-    background: #000;
+    align-items: center;
 
-    border: 3px inset #888;
+    gap: 20px;
 
-    color: #00ff00;
+    margin-top: 12px;
 
-    font-family: "Courier New", monospace;
+    padding: 20px;
+
+    background: #ddffdd;
+
+    border: 3px ridge white;
+}
+
+.mail-icon {
+    font-size: 70px;
+}
+
+.contact-box h2 {
+    margin-top: 0;
+
+    color: #116622;
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+    margin-top: 30px;
+
+    padding: 18px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #eeeeff,
+            #ccccdd
+        );
+
+    border: 3px ridge white;
+}
+
+.footer-stars {
+    color: #ff0099;
 
     font-size: 20px;
 
-    letter-spacing: 4px;
+    letter-spacing: 5px;
 }
 
+.best-viewed {
+    display: inline-block;
 
-.tiny {
-    margin-bottom: 0;
+    margin: 10px;
 
-    font-family: "Comic Sans MS", cursive;
+    padding: 6px 12px;
+
+    background: #ffff99;
+
+    border: 2px solid #cc9900;
+
+    font-size: 11px;
+
+    font-weight: bold;
+}
+
+.footer-links a {
+    color: #0000cc;
+
+    text-decoration: underline;
+
+    font-weight: bold;
+}
+
+.web-badges {
+    margin-top: 12px;
+}
+
+.web-badges span {
+    display: inline-block;
+
+    margin: 3px;
+
+    padding: 4px 7px;
+
+    color: white;
+
+    background: #000080;
+
+    border: 2px outset white;
 
     font-size: 10px;
+
+    font-weight: bold;
 }
 
 
-/* =========================================================
-   BOTTOM
-   ========================================================= */
-
-.browser-status {
-    border-top: 2px solid white;
-
-    border-bottom: 2px solid #404040;
-}
-
-
-.desktop-footer {
-    display: flex;
-
-    justify-content: space-between;
-
-    max-width: 1200px;
-
-    margin: 10px auto 0;
-
-    color: #666;
-
-    font-family: "Courier New", monospace;
-
-    font-size: 9px;
-
-    letter-spacing: 1px;
-}
-
-
-/* =========================================================
+/* =========================================
    MOBILE
-   ========================================================= */
+   ========================================= */
 
-@media (max-width: 800px) {
+@media (max-width: 750px) {
 
-    .desktop {
+    body {
         padding: 5px;
     }
 
-    .desktop-header {
-        display: none;
-    }
-
-    .menu-bar {
-        gap: 12px;
-    }
-
-    .website {
+    .window-content {
         flex-direction: column;
     }
 
@@ -1005,68 +943,39 @@ h1 {
 
         border-right: none;
 
-        border-bottom: 3px solid #404040;
+        border-bottom: 3px ridge white;
     }
 
-    .sidebar-window {
-        margin-bottom: 8px;
-    }
+    .nav-button {
+        display: inline-block;
 
-    .sidebar-content {
-        display: flex;
+        width: calc(50% - 7px);
 
-        flex-wrap: wrap;
-
-        gap: 3px;
-    }
-
-    .folder-link {
-        padding: 6px 8px;
-    }
-
-    .content {
-        padding: 8px;
+        margin-right: 5px;
     }
 
     .welcome-content {
-        padding: 25px 18px;
-
-        min-height: 450px;
+        flex-direction: column;
     }
 
-    h1 {
-        font-size: 58px;
-
-        letter-spacing: -2px;
+    .computer-icon {
+        margin: auto;
     }
 
-    .project-grid {
+    .projects {
         grid-template-columns: 1fr;
     }
 
-    .about-content {
-        grid-template-columns: 1fr;
-    }
-
-    .avatar {
-        margin: 0 auto;
-    }
-
-    .profile-table div {
+    .contact-box {
         flex-direction: column;
 
-        gap: 3px;
+        text-align: center;
     }
 
-    .desktop-footer {
-        flex-direction: column;
+    .windows-menu {
+        overflow-x: auto;
 
-        gap: 5px;
-
-        padding: 5px;
+        white-space: nowrap;
     }
 
-    .address-box {
-        font-size: 9px;
-    }
 }
