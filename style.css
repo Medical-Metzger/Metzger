@@ -409,7 +409,7 @@ a {
 
     padding: 6px 13px;
 
-    border-radius: 999px;
+    border-radius: 8px;
 
     font-size: 10px;
 
@@ -421,7 +421,7 @@ a {
         rgba(220,38,38,0.22);
 
     border:
-        1px solid rgba(252,165,165,0.3);
+        3px solid rgba(252,165,165,0.3);
 
     color: #fca5a5;
 }
@@ -440,7 +440,7 @@ a {
         0 0 6px #f87171;
 
     animation:
-        liquid-pulse 2s infinite;
+        liquid-pulse 5s infinite;
 }
 
 
@@ -464,7 +464,7 @@ a {
 
     padding: 8px 15px;
 
-    border-radius: 999px;
+    border-radius: 8px;
 
     border:
         1px solid transparent;
