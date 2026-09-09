@@ -1,760 +1,2409 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&family=Exo+2:wght@300;400;500;600;700;800;900&display=swap');
 
-    <title>Precious Karley — Creative Portfolio</title>
 
-    <link rel="stylesheet" href="style.css">
-</head>
+/* ═══════════════════════════════════════
+   RESET
+═══════════════════════════════════════ */
 
-<body>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-    <!-- BACKGROUND -->
-    <div class="background-photo"></div>
+html {
+    scroll-behavior: smooth;
+}
 
-    <div class="red-orb orb-one"></div>
-    <div class="red-orb orb-two"></div>
-    <div class="red-orb orb-three"></div>
+body {
+    min-height: 100vh;
+    font-family: "Nunito", Arial, sans-serif;
 
-    <div class="bg-bubble bubble-one"></div>
-    <div class="bg-bubble bubble-two"></div>
-    <div class="bg-bubble bubble-three"></div>
-    <div class="bg-bubble bubble-four"></div>
-    <div class="bg-bubble bubble-five"></div>
+    color: rgba(255, 220, 225, 0.92);
 
+    background:
+        linear-gradient(
+            155deg,
+            #150003 0%,
+            #2a0009 30%,
+            #1a000d 65%,
+            #0a0002 100%
+        );
 
-    <!-- HEADER -->
-    <header class="site-header">
+    overflow-x: hidden;
+}
 
-        <div class="logo-area">
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-            <div class="logo-wrapper">
-                <div class="logo-blob">
-                    <span>PK</span>
-                </div>
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
 
-                <div class="ripple-ring logo-ring-one"></div>
-                <div class="ripple-ring logo-ring-two"></div>
-            </div>
 
-            <div class="logo-text">
-                <div class="logo-name">
-                    Precious Karley
-                </div>
+/* ═══════════════════════════════════════
+   BACKGROUND PHOTO
+═══════════════════════════════════════ */
 
-                <div class="logo-subtitle">
-                    creative things • digital art • design
-                </div>
-            </div>
+.background-photo {
 
-        </div>
+    position: fixed;
+    inset: 0;
 
+    pointer-events: none;
 
-        <div class="online-pill">
-            <span class="online-dot"></span>
-            ONLINE
-        </div>
+    background-image:
+        url("https://images.unsplash.com/photo-1574709755755-1699988a9c82?w=1600&h=900&fit=crop&auto=format");
 
+    background-size: cover;
+    background-position: center;
 
-        <nav class="main-nav">
+    opacity: 0.12;
 
-            <a href="#home" class="nav-pill active">
-                HOME
-            </a>
+    mix-blend-mode: luminosity;
 
-            <a href="#portfolio" class="nav-pill">
-                PORTFOLIO
-            </a>
+    z-index: 0;
+}
 
-            <a href="#about" class="nav-pill">
-                ABOUT
-            </a>
 
-            <a href="#contact" class="nav-pill">
-                CONTACT
-            </a>
+/* ═══════════════════════════════════════
+   GLOW ORBS
+═══════════════════════════════════════ */
 
-        </nav>
+.red-orb {
 
-    </header>
+    position: fixed;
 
+    pointer-events: none;
 
-    <!-- MAIN -->
-    <main>
+    border-radius: 50%;
 
+    filter: blur(100px);
 
-        <!-- HOME -->
-        <section id="home" class="home-section">
+    opacity: 0.5;
 
-            <div class="hero-blob-wrapper">
+    z-index: 1;
 
-                <div class="hero-blob">
+    animation:
+        orb-drift 11s ease-in-out infinite;
+}
 
-                    <div class="hero-gloss"></div>
 
-                    <span>PK</span>
+.orb-one {
 
-                </div>
+    width: 600px;
+    height: 600px;
 
-                <div class="ripple-ring hero-ring-one"></div>
-                <div class="ripple-ring hero-ring-two"></div>
+    top: -140px;
+    left: -140px;
 
-            </div>
+    background:
+        radial-gradient(
+            circle,
+            #dc2626,
+            #7f1d1d,
+            transparent 70%
+        );
+}
 
 
-            <div class="hero-eyebrow">
-                ✦ HELLO THERE! ✦
-            </div>
+.orb-two {
 
+    width: 480px;
+    height: 480px;
 
-            <h1 class="hero-title">
+    bottom: 0;
+    right: -120px;
 
-                <span class="shimmer-red">
-                    Welcome to
-                </span>
+    background:
+        radial-gradient(
+            circle,
+            #f43f5e,
+            #881337,
+            transparent 70%
+        );
 
-                <br>
+    animation-delay: 4s;
+}
 
-                <span class="hero-white">
-                    my little world.
-                </span>
 
-            </h1>
+.orb-three {
 
+    width: 360px;
+    height: 360px;
 
-            <p class="hero-description">
+    top: 38%;
+    left: 38%;
 
-                I'm <strong>Precious Karley</strong> — a creative person
-                interested in design, art, and digital experiences.
+    background:
+        radial-gradient(
+            circle,
+            #be123c,
+            #500724,
+            transparent 70%
+        );
 
-            </p>
+    opacity: 0.25;
 
+    animation-delay: 7s;
+}
 
-            <div class="hero-buttons">
 
-                <a href="#portfolio" class="glossy-red primary-button">
-                    EXPLORE MY WORK ➜
-                </a>
+@keyframes orb-drift {
 
-                <a href="#about" class="glossy-red secondary-button">
-                    ABOUT ME ★
-                </a>
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
 
-            </div>
+    33% {
+        transform: translate(18px, -22px) scale(1.05);
+    }
 
+    66% {
+        transform: translate(-12px, 14px) scale(0.97);
+    }
 
-            <!-- QUICK LINKS -->
-            <div class="quick-links">
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
 
-                <a href="#portfolio" class="bubble-panel quick-card">
+}
 
-                    <div class="quick-icon">
-                        ◈
-                    </div>
 
-                    <div class="quick-title">
-                        MY WORK
-                    </div>
+/* ═══════════════════════════════════════
+   BACKGROUND BUBBLES
+═══════════════════════════════════════ */
 
-                    <div class="quick-subtitle">
-                        Explore my projects
-                    </div>
+.bg-bubble {
 
-                </a>
+    position: fixed;
 
+    pointer-events: none;
 
-                <a href="#about" class="bubble-panel quick-card">
+    border-radius: 50%;
 
-                    <div class="quick-icon">
-                        ✦
-                    </div>
+    background:
+        radial-gradient(
+            ellipse at 32% 26%,
+            rgba(255,255,255,0.12) 0%,
+            rgba(220,38,38,0.06) 45%,
+            transparent 70%
+        );
 
-                    <div class="quick-title">
-                        ABOUT ME
-                    </div>
+    border: 1px solid rgba(255,200,210,0.18);
 
-                    <div class="quick-subtitle">
-                        A little bit about me
-                    </div>
+    border-top-color:
+        rgba(255,240,245,0.4);
 
-                </a>
+    backdrop-filter: blur(2px);
 
+    -webkit-backdrop-filter: blur(2px);
 
-                <a href="#contact" class="bubble-panel quick-card">
+    z-index: 1;
+}
 
-                    <div class="quick-icon">
-                        ✉
-                    </div>
 
-                    <div class="quick-title">
-                        CONTACT
-                    </div>
+.bubble-one {
+    width: 320px;
+    height: 320px;
+    top: 12%;
+    right: 6%;
+    opacity: 0.8;
+}
 
-                    <div class="quick-subtitle">
-                        Let's talk
-                    </div>
+.bubble-two {
+    width: 200px;
+    height: 200px;
+    top: 55%;
+    left: 4%;
+    opacity: 0.65;
+}
 
-                </a>
+.bubble-three {
+    width: 140px;
+    height: 140px;
+    bottom: 18%;
+    right: 22%;
+    opacity: 0.55;
+}
 
-            </div>
+.bubble-four {
+    width: 420px;
+    height: 420px;
+    bottom: -80px;
+    left: -60px;
+    opacity: 0.5;
+}
 
-        </section>
+.bubble-five {
+    width: 100px;
+    height: 100px;
+    top: 35%;
+    right: 32%;
+    opacity: 0.45;
+}
 
 
+/* ═══════════════════════════════════════
+   HEADER
+═══════════════════════════════════════ */
 
-        <!-- PORTFOLIO -->
-        <section id="portfolio" class="content-section">
+.site-header {
 
-            <div class="section-header">
+    position: relative;
 
-                <div class="section-eyebrow">
-                    CREATIVE STUFF
-                </div>
+    z-index: 20;
 
-                <h2 class="shimmer-red">
-                    My Portfolio
-                </h2>
+    min-height: 76px;
 
-                <div class="section-divider">
+    display: flex;
 
-                    <span></span>
-                    <div class="divider-dot"></div>
-                    <span></span>
+    align-items: center;
 
-                </div>
+    justify-content: space-between;
 
-            </div>
+    padding: 14px 28px;
 
+    background:
+        rgba(100, 0, 20, 0.5);
 
-            <div class="project-grid">
+    backdrop-filter:
+        blur(24px) saturate(250%);
 
+    -webkit-backdrop-filter:
+        blur(24px) saturate(250%);
 
-                <!-- PROJECT 1 -->
-                <article class="bubble-panel project-card">
+    border-bottom:
+        1px solid rgba(220,38,38,0.3);
 
-                    <div class="project-image">
+    border-top:
+        1px solid rgba(252,165,165,0.45);
 
-                        <img
-                            src="https://images.unsplash.com/photo-1574709755755-1699988a9c82?w=800&h=600&fit=crop&auto=format"
-                            alt="Creative project"
-                        >
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.18),
+        0 4px 24px rgba(180,0,20,0.3);
+}
 
-                        <div class="image-overlay"></div>
 
-                        <span class="project-tag">
-                            DESIGN
-                        </span>
+/* ═══════════════════════════════════════
+   LOGO
+═══════════════════════════════════════ */
 
-                        <span class="project-icon">
-                            ✦
-                        </span>
+.logo-area {
 
-                    </div>
+    display: flex;
 
+    align-items: center;
 
-                    <div class="project-content">
+    gap: 12px;
+}
 
-                        <h3>
-                            Creative Project
-                        </h3>
 
-                        <p>
-                            A collection of visual ideas, experiments
-                            and creative work.
-                        </p>
+.logo-wrapper {
 
-                        <a href="#" class="project-link">
-                            VIEW PROJECT ➜
-                        </a>
+    position: relative;
 
-                    </div>
+    width: 46px;
+    height: 46px;
+}
 
-                </article>
 
+.logo-blob {
 
+    width: 46px;
+    height: 46px;
 
-                <!-- PROJECT 2 -->
-                <article class="bubble-panel project-card">
+    display: flex;
 
-                    <div class="project-image">
+    align-items: center;
+    justify-content: center;
 
-                        <img
-                            src="https://images.unsplash.com/photo-1571347586843-69826a524206?w=800&h=600&fit=crop&auto=format"
-                            alt="Digital design"
-                        >
+    background:
+        radial-gradient(
+            ellipse at 35% 28%,
+            rgba(255,255,255,0.3) 0%,
+            #dc2626 50%,
+            #7f1d1d 100%
+        );
 
-                        <div class="image-overlay"></div>
+    box-shadow:
+        0 0 24px rgba(220,38,38,0.65),
+        inset 0 2px 0 rgba(255,255,255,0.4);
 
-                        <span class="project-tag">
-                            DIGITAL
-                        </span>
+    animation:
+        blob-morph 9s ease-in-out infinite;
+}
 
-                        <span class="project-icon">
-                            ◈
-                        </span>
 
-                    </div>
+.logo-blob span {
 
+    position: relative;
 
-                    <div class="project-content">
+    z-index: 2;
 
-                        <h3>
-                            Digital Design
-                        </h3>
+    font-family: "Exo 2", sans-serif;
 
-                        <p>
-                            Digital artwork, graphics and visual
-                            experiments.
-                        </p>
+    font-weight: 900;
 
-                        <a href="#" class="project-link">
-                            VIEW PROJECT ➜
-                        </a>
+    color: white;
 
-                    </div>
+    font-size: 14px;
+}
 
-                </article>
 
+.logo-text {
+    line-height: 1.15;
+}
 
 
-                <!-- PROJECT 3 -->
-                <article class="bubble-panel project-card">
+.logo-name {
 
-                    <div class="project-image">
+    font-family: "Exo 2", sans-serif;
 
-                        <img
-                            src="https://images.unsplash.com/photo-1542274957-16888590a231?w=800&h=600&fit=crop&auto=format"
-                            alt="3D experiments"
-                        >
+    font-weight: 900;
 
-                        <div class="image-overlay"></div>
+    text-transform: uppercase;
 
-                        <span class="project-tag">
-                            3D / ART
-                        </span>
+    letter-spacing: 0.12em;
 
-                        <span class="project-icon">
-                            ⬡
-                        </span>
+    font-size: 14px;
 
-                    </div>
+    color:
+        rgba(255,220,225,0.95);
+}
 
 
-                    <div class="project-content">
+.logo-subtitle {
 
-                        <h3>
-                            3D Experiments
-                        </h3>
+    margin-top: 4px;
 
-                        <p>
-                            Models, environments and other digital
-                            experiments.
-                        </p>
+    font-size: 10px;
 
-                        <a href="#" class="project-link">
-                            VIEW PROJECT ➜
-                        </a>
+    letter-spacing: 0.08em;
 
-                    </div>
+    color:
+        rgba(252,165,165,0.55);
+}
 
-                </article>
 
-            </div>
+/* ═══════════════════════════════════════
+   ONLINE PILL
+═══════════════════════════════════════ */
 
+.online-pill {
 
-            <!-- POMEGRANATE STRIP -->
-            <div class="pomegranate-strip bubble-panel">
+    position: absolute;
 
-                <img
-                    src="https://images.unsplash.com/photo-1667986967420-9c097bac017f?w=1200&h=400&fit=crop&auto=format"
-                    alt="Pomegranates"
-                >
+    left: 50%;
 
-            </div>
+    transform: translateX(-50%);
 
-        </section>
+    display: flex;
 
+    align-items: center;
 
+    gap: 7px;
 
-        <!-- ABOUT -->
-        <section id="about" class="content-section">
+    padding: 6px 13px;
 
-            <div class="section-header">
+    border-radius: 999px;
 
-                <div class="section-eyebrow">
-                    NICE TO MEET YOU
-                </div>
+    font-size: 10px;
 
-                <h2 class="shimmer-red">
-                    About Precious
-                </h2>
+    font-weight: 800;
 
-                <div class="section-divider">
+    letter-spacing: 0.12em;
 
-                    <span></span>
-                    <div class="divider-dot"></div>
-                    <span></span>
+    background:
+        rgba(220,38,38,0.22);
 
-                </div>
+    border:
+        1px solid rgba(252,165,165,0.3);
 
-            </div>
+    color: #fca5a5;
+}
 
 
-            <div class="about-grid">
+.online-dot {
 
+    width: 7px;
+    height: 7px;
 
-                <!-- BIO -->
-                <div class="about-left">
+    border-radius: 50%;
 
-                    <div class="bubble-panel bio-panel">
+    background: #f87171;
 
-                        <div class="profile-row">
+    box-shadow:
+        0 0 6px #f87171;
 
-                            <div class="profile-blob">
-                                <span>PK</span>
-                            </div>
+    animation:
+        liquid-pulse 2s infinite;
+}
 
-                            <div>
 
-                                <h3>
-                                    Precious Karley
-                                </h3>
+/* ═══════════════════════════════════════
+   NAVIGATION
+═══════════════════════════════════════ */
 
-                                <p>
-                                    creative things • digital art • design
-                                </p>
+.main-nav {
 
-                            </div>
+    display: flex;
 
-                        </div>
+    gap: 4px;
+}
 
 
-                        <div class="bio-text">
+.nav-pill {
 
-                            <p>
-                                Hey! I'm Precious — a creative person who
-                                loves experimenting with ideas and turning
-                                them into visual things. Design, art, and
-                                digital experiences are my playground.
-                            </p>
+    position: relative;
 
-                            <p>
-                                This website is inspired by the
-                                <strong>optimistic internet aesthetic</strong>
-                                of the mid-2000s — glossy interfaces,
-                                vibrant colors, and that sense that the
-                                digital world was full of wonder.
-                            </p>
+    overflow: hidden;
 
-                            <p>
-                                I love blending organic, natural textures
-                                with sleek digital design.
-                            </p>
+    padding: 8px 15px;
 
-                        </div>
+    border-radius: 999px;
 
+    border:
+        1px solid transparent;
 
-                        <div class="skill-tags">
+    font-size: 10px;
 
-                            <span>CREATIVE</span>
-                            <span>DESIGN</span>
-                            <span>DIGITAL</span>
+    font-weight: 800;
 
-                        </div>
+    letter-spacing: 0.1em;
 
-                    </div>
+    color:
+        rgba(252,165,165,0.7);
 
+    transition:
+        all 0.22s ease;
+}
 
-                    <!-- SKILLS -->
-                    <div class="bubble-panel skills-panel">
 
-                        <h4>
-                            ✦ SKILLS
-                        </h4>
+.nav-pill::before {
 
+    content: "";
 
-                        <div class="skill">
+    position: absolute;
 
-                            <div class="skill-label">
-                                <span>Creative Direction</span>
-                                <strong>90%</strong>
-                            </div>
+    top: 0;
+    left: 0;
+    right: 0;
 
-                            <div class="progress-background">
-                                <div class="progress-liquid" style="width: 90%;"></div>
-                            </div>
+    height: 52%;
 
-                        </div>
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,0.3),
+            transparent
+        );
 
+    pointer-events: none;
+}
 
-                        <div class="skill">
 
-                            <div class="skill-label">
-                                <span>Visual Design</span>
-                                <strong>85%</strong>
-                            </div>
+.nav-pill.active {
 
-                            <div class="progress-background">
-                                <div class="progress-liquid" style="width: 85%;"></div>
-                            </div>
+    background:
+        linear-gradient(
+            135deg,
+            rgba(220,38,38,0.72),
+            rgba(244,63,94,0.55)
+        );
 
-                        </div>
+    box-shadow:
+        0 0 18px rgba(220,38,38,0.5),
+        inset 0 1px 0 rgba(255,255,255,0.45);
 
+    border-color:
+        rgba(252,165,165,0.6);
 
-                        <div class="skill">
+    color: white;
+}
 
-                            <div class="skill-label">
-                                <span>Digital Art</span>
-                                <strong>80%</strong>
-                            </div>
 
-                            <div class="progress-background">
-                                <div class="progress-liquid" style="width: 80%;"></div>
-                            </div>
+.nav-pill:hover {
 
-                        </div>
+    background:
+        rgba(255,200,210,0.18);
 
+    color: white;
 
-                        <div class="skill">
+    transform: translateY(-1px);
+}
 
-                            <div class="skill-label">
-                                <span>3D / Motion</span>
-                                <strong>70%</strong>
-                            </div>
 
-                            <div class="progress-background">
-                                <div class="progress-liquid" style="width: 70%;"></div>
-                            </div>
+/* ═══════════════════════════════════════
+   HOME
+═══════════════════════════════════════ */
 
-                        </div>
+.home-section {
 
+    position: relative;
 
-                        <div class="skill">
+    z-index: 10;
 
-                            <div class="skill-label">
-                                <span>Web Aesthetics</span>
-                                <strong>88%</strong>
-                            </div>
+    min-height:
+        calc(100vh - 130px);
 
-                            <div class="progress-background">
-                                <div class="progress-liquid" style="width: 88%;"></div>
-                            </div>
+    display: flex;
 
-                        </div>
+    flex-direction: column;
 
-                    </div>
+    align-items: center;
 
-                </div>
+    justify-content: center;
 
+    padding:
+        70px 24px 90px;
 
+    text-align: center;
+}
 
-                <!-- ABOUT RIGHT -->
-                <div class="about-right">
 
-                    <div class="bubble-panel about-image">
+/* ═══════════════════════════════════════
+   HERO BLOB
+═══════════════════════════════════════ */
 
-                        <img
-                            src="https://images.unsplash.com/photo-1571347586843-69826a524206?w=900&h=600&fit=crop&auto=format"
-                            alt="Sliced pomegranate"
-                        >
+.hero-blob-wrapper {
 
-                        <div class="about-image-overlay">
+    position: relative;
 
-                            <div class="shimmer-red">
-                                Design
-                            </div>
+    margin-bottom: 30px;
 
-                            <span>
-                                + Art = Magic
-                            </span>
+    width: 176px;
+    height: 176px;
+}
 
-                        </div>
 
-                    </div>
+.hero-blob {
 
+    position: relative;
 
-                    <!-- FACTS -->
-                    <div class="facts-grid">
+    width: 176px;
+    height: 176px;
 
-                        <div class="bubble-panel fact-card">
+    display: flex;
 
-                            <div class="fact-icon">
-                                🎨
-                            </div>
+    align-items: center;
+    justify-content: center;
 
-                            <strong>
-                                100+
-                            </strong>
+    background:
+        radial-gradient(
+            ellipse at 34% 28%,
+            rgba(255,255,255,0.3) 0%,
+            #dc2626 45%,
+            #7f1d1d 100%
+        );
 
-                            <span>
-                                Creative Projects
-                            </span>
+    box-shadow:
+        0 0 70px rgba(220,38,38,0.65),
+        0 0 140px rgba(220,38,38,0.22),
+        inset 0 3px 0 rgba(255,255,255,0.42);
 
-                        </div>
+    animation:
+        blob-morph 9s ease-in-out infinite;
+}
 
 
-                        <div class="bubble-panel fact-card">
+.hero-gloss {
 
-                            <div class="fact-icon">
-                                ✦
-                            </div>
+    position: absolute;
 
-                            <strong>
-                                Y2K Aero
-                            </strong>
+    width: 58%;
+    height: 34%;
 
-                            <span>
-                                Design Style
-                            </span>
+    top: 13%;
+    left: 21%;
 
-                        </div>
+    border-radius: 50%;
 
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(255,255,255,0.52),
+            rgba(255,255,255,0.04)
+        );
+}
 
-                        <div class="bubble-panel fact-card">
 
-                            <div class="fact-icon">
-                                🌐
-                            </div>
+.hero-blob span {
 
-                            <strong>
-                                HTML + CSS
-                            </strong>
+    position: relative;
 
-                            <span>
-                                Made With
-                            </span>
+    z-index: 2;
 
-                        </div>
+    font-family: "Exo 2", sans-serif;
 
+    font-size: 38px;
 
-                        <div class="bubble-panel fact-card">
+    font-weight: 900;
 
-                            <div class="fact-icon">
-                                🧠
-                            </div>
+    color: white;
 
-                            <strong>
-                                Happy Brain
-                            </strong>
+    text-shadow:
+        0 2px 10px rgba(0,0,0,0.35);
+}
 
-                            <span>
-                                Best Viewed
-                            </span>
 
-                        </div>
+/* ═══════════════════════════════════════
+   RIPPLE
+═══════════════════════════════════════ */
 
-                    </div>
+.ripple-ring {
 
+    position: absolute;
 
-                    <a href="#contact" class="glossy-red contact-about-button">
-                        LET'S MAKE SOMETHING COOL ✦
-                    </a>
+    border-radius: 50%;
 
-                </div>
+    border:
+        1.5px solid rgba(252,165,165,0.45);
 
-            </div>
+    pointer-events: none;
 
-        </section>
+    animation:
+        ripple 3s ease-out infinite;
+}
 
 
+.hero-ring-one {
+    inset: -10px;
+}
 
-        <!-- CONTACT -->
-        <section id="contact" class="contact-section">
+.hero-ring-two {
+    inset: -10px;
+    animation-delay: 1.5s;
+}
 
-            <div class="section-header">
 
-                <div class="section-eyebrow">
-                    SAY HELLO
-                </div>
+.logo-ring-one {
+    inset: -5px;
+}
 
-                <h2 class="shimmer-red">
-                    Let's make something cool.
-                </h2>
+.logo-ring-two {
+    inset: -5px;
+    animation-delay: 1.2s;
+}
 
-                <div class="section-divider">
 
-                    <span></span>
-                    <div class="divider-dot"></div>
-                    <span></span>
+@keyframes ripple {
 
-                </div>
+    0% {
+        transform: scale(0.85);
+        opacity: 0.55;
+    }
 
-            </div>
+    100% {
+        transform: scale(2.2);
+        opacity: 0;
+    }
+}
 
 
-            <p class="contact-intro">
-                Have a project, idea or just want to say hello?
-            </p>
+/* ═══════════════════════════════════════
+   HERO TEXT
+═══════════════════════════════════════ */
 
+.hero-eyebrow {
 
-            <div class="email-wrapper">
+    font-family: "Exo 2", sans-serif;
 
-                <a
-                    href="mailto:YOUR-EMAIL@example.com"
-                    class="glossy-red email-button"
-                >
-                    <span>✉</span>
-                    SEND ME AN EMAIL
-                </a>
+    font-weight: 700;
 
-                <div class="ripple-ring email-ring-one"></div>
-                <div class="ripple-ring email-ring-two"></div>
+    font-size: 11px;
 
-            </div>
+    letter-spacing: 0.16em;
 
+    color:
+        rgba(252,165,165,0.55);
 
-            <!-- POMEGRANATE CIRCLES -->
-            <div class="pomegranate-circles">
+    margin-bottom: 12px;
+}
 
-                <div class="bubble-panel pomegranate-circle">
-                    <img
-                        src="https://images.unsplash.com/photo-1574709755254-fcd942d09d5a?w=500&h=500&fit=crop&auto=format"
-                        alt="Pomegranate"
-                    >
-                </div>
 
-                <div class="bubble-panel pomegranate-circle">
-                    <img
-                        src="https://images.unsplash.com/photo-1542274957-16888590a231?w=500&h=500&fit=crop&auto=format"
-                        alt="Pomegranate seeds"
-                    >
-                </div>
+.hero-title {
 
-                <div class="bubble-panel pomegranate-circle">
-                    <img
-                        src="https://images.unsplash.com/photo-1571347586843-69826a524206?w=500&h=500&fit=crop&auto=format"
-                        alt="Sliced pomegranate"
-                    >
-                </div>
+    font-family: "Exo 2", sans-serif;
 
-            </div>
+    font-size:
+        clamp(44px, 7vw, 82px);
 
+    line-height: 0.95;
 
-            <div class="contact-tags">
+    font-weight: 900;
 
-                <span>◈ Design</span>
-                <span>✦ Art</span>
-                <span>⬡ Digital</span>
+    letter-spacing: -0.02em;
 
-            </div>
+    margin-bottom: 22px;
+}
 
-        </section>
 
-    </main>
+.hero-white {
 
+    color: white;
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
+    text-shadow:
+        0 0 48px rgba(220,38,38,0.5);
+}
 
-        © 2026
-        <span class="shimmer-red">Precious Karley</span>
-        · MADE WITH HTML + CSS
-        · BEST VIEWED WITH A HAPPY BRAIN
 
-    </footer>
+.hero-description {
 
+    max-width: 440px;
 
-</body>
-</html>
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    font-weight: 300;
+
+    color:
+        rgba(255,200,210,0.72);
+
+    margin-bottom: 30px;
+}
+
+
+.hero-description strong {
+
+    color: #fca5a5;
+
+    font-weight: 800;
+}
+
+
+/* ═══════════════════════════════════════
+   SHIMMER
+═══════════════════════════════════════ */
+
+.shimmer-red {
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff 0%,
+            #fca5a5 25%,
+            #f43f5e 55%,
+            #fda4af 80%,
+            #fff 100%
+        );
+
+    background-size: 200% auto;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    background-clip: text;
+
+    animation:
+        shimmer-red 3.5s linear infinite;
+}
+
+
+@keyframes shimmer-red {
+
+    0% {
+        background-position: 0% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
+}
+
+
+/* ═══════════════════════════════════════
+   BUTTONS
+═══════════════════════════════════════ */
+
+.hero-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+
+.glossy-red {
+
+    position: relative;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.glossy-red::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 52%;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,0.48),
+            rgba(255,255,255,0.06)
+        );
+
+    pointer-events: none;
+
+    border-radius: inherit;
+}
+
+
+.glossy-red:hover {
+
+    transform:
+        translateY(-2px) scale(1.03);
+
+    box-shadow:
+        0 8px 28px rgba(220,38,38,0.55),
+        0 0 0 1px rgba(252,165,165,0.4);
+}
+
+
+.primary-button {
+
+    padding: 13px 28px;
+
+    border-radius: 999px;
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dc2626,
+            #f43f5e
+        );
+
+    border:
+        1px solid rgba(252,165,165,0.3);
+
+    box-shadow:
+        0 4px 24px rgba(220,38,38,0.5),
+        inset 0 1px 0 rgba(255,255,255,0.38);
+}
+
+
+.secondary-button {
+
+    padding: 13px 28px;
+
+    border-radius: 999px;
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    color: #fca5a5;
+
+    background:
+        rgba(220,38,38,0.18);
+
+    border:
+        1px solid rgba(252,165,165,0.32);
+
+    box-shadow:
+        0 4px 20px rgba(220,38,38,0.18),
+        inset 0 1px 0 rgba(255,255,255,0.14);
+}
+
+
+/* ═══════════════════════════════════════
+   BUBBLE PANELS
+═══════════════════════════════════════ */
+
+.bubble-panel {
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 28px;
+
+    background:
+        rgba(255,200,210,0.10);
+
+    backdrop-filter:
+        blur(22px) saturate(220%);
+
+    -webkit-backdrop-filter:
+        blur(22px) saturate(220%);
+
+    border:
+        1px solid rgba(255,180,190,0.28);
+
+    border-top-color:
+        rgba(255,235,240,0.6);
+
+    border-left-color:
+        rgba(255,220,228,0.45);
+
+    box-shadow:
+        inset 0 1.5px 0 rgba(255,255,255,0.35),
+        inset 0 -1px 0 rgba(200,0,30,0.12),
+        0 8px 32px rgba(180,0,30,0.18);
+
+    transition:
+        transform 0.28s ease,
+        box-shadow 0.28s ease;
+}
+
+
+.bubble-panel::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 8%;
+    right: 8%;
+
+    height: 42%;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(255,255,255,0.28),
+            transparent 80%
+        );
+
+    pointer-events: none;
+
+    border-radius:
+        0 0 50% 50%;
+
+    z-index: 1;
+}
+
+
+.bubble-panel:hover {
+
+    transform:
+        translateY(-3px) scale(1.012);
+
+    box-shadow:
+        inset 0 1.5px 0 rgba(255,255,255,0.4),
+        0 16px 48px rgba(200,0,30,0.28),
+        0 0 0 1px rgba(252,165,165,0.3);
+}
+
+
+/* ═══════════════════════════════════════
+   QUICK CARDS
+═══════════════════════════════════════ */
+
+.quick-links {
+
+    width: 100%;
+
+    max-width: 720px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 16px;
+
+    margin-top: 60px;
+}
+
+
+.quick-card {
+
+    padding: 22px 16px;
+
+    text-align: center;
+}
+
+
+.quick-icon {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 42px;
+    height: 42px;
+
+    margin:
+        0 auto 12px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(220,38,38,0.55),
+            rgba(244,63,94,0.3)
+        );
+
+    box-shadow:
+        0 0 14px rgba(220,38,38,0.35);
+
+    color: #fca5a5;
+
+    font-size: 18px;
+}
+
+
+.quick-title {
+
+    position: relative;
+
+    z-index: 2;
+
+    font-family: "Exo 2", sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+
+    color: #fca5a5;
+
+    margin-bottom: 4px;
+}
+
+
+.quick-subtitle {
+
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 11px;
+
+    color:
+        rgba(255,180,190,0.58);
+}
+
+
+/* ═══════════════════════════════════════
+   CONTENT SECTIONS
+═══════════════════════════════════════ */
+
+.content-section {
+
+    position: relative;
+
+    z-index: 10;
+
+    min-height:
+        calc(100vh - 130px);
+
+    padding:
+        80px 24px;
+}
+
+
+.section-header {
+
+    text-align: center;
+
+    max-width: 1000px;
+
+    margin:
+        0 auto 48px;
+}
+
+
+.section-eyebrow {
+
+    font-family: "Exo 2", sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.16em;
+
+    color:
+        rgba(252,165,165,0.48);
+
+    margin-bottom: 8px;
+}
+
+
+.section-header h2 {
+
+    font-family: "Exo 2", sans-serif;
+
+    font-size:
+        clamp(38px, 5vw, 58px);
+
+    font-weight: 900;
+
+    letter-spacing: -0.02em;
+}
+
+
+.section-divider {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 18px;
+}
+
+
+.section-divider span {
+
+    display: block;
+
+    width: 90px;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(220,38,38,0.5)
+        );
+}
+
+
+.section-divider span:last-child {
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(220,38,38,0.5),
+            transparent
+        );
+}
+
+
+.divider-dot {
+
+    width: 11px;
+    height: 11px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dc2626,
+            #f43f5e
+        );
+
+    box-shadow:
+        0 0 8px rgba(220,38,38,0.6);
+}
+
+
+/* ═══════════════════════════════════════
+   PROJECTS
+═══════════════════════════════════════ */
+
+.project-grid {
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 24px;
+}
+
+
+.project-card {
+
+    padding: 0;
+
+    cursor: pointer;
+}
+
+
+.project-image {
+
+    position: relative;
+
+    height: 220px;
+
+    overflow: hidden;
+
+    border-radius:
+        28px 28px 0 0;
+}
+
+
+.project-image img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform 0.5s ease;
+}
+
+
+.project-card:hover
+.project-image img {
+
+    transform:
+        scale(1.08);
+}
+
+
+.image-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 45%,
+            rgba(60,0,10,0.9) 100%
+        );
+}
+
+
+.project-tag {
+
+    position: absolute;
+
+    top: 13px;
+    right: 13px;
+
+    padding: 5px 10px;
+
+    border-radius: 999px;
+
+    background:
+        rgba(180,0,30,0.6);
+
+    border:
+        1px solid rgba(252,165,165,0.4);
+
+    color: #fecdd3;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+
+    backdrop-filter: blur(8px);
+}
+
+
+.project-icon {
+
+    position: absolute;
+
+    bottom: 13px;
+    left: 13px;
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(220,38,38,0.75),
+            rgba(244,63,94,0.5)
+        );
+
+    box-shadow:
+        0 0 10px rgba(220,38,38,0.5);
+
+    color: white;
+}
+
+
+.project-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    padding: 22px;
+}
+
+
+.project-content h3 {
+
+    font-family: "Exo 2", sans-serif;
+
+    font-size: 18px;
+
+    font-weight: 800;
+
+    color: white;
+
+    margin-bottom: 7px;
+
+    text-shadow:
+        0 0 12px rgba(220,38,38,0.4);
+}
+
+
+.project-content p {
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+    color:
+        rgba(255,180,190,0.65);
+}
+
+
+.project-link {
+
+    display: inline-block;
+
+    margin-top: 14px;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 0.1em;
+
+    color: #f43f5e;
+}
+
+
+/* ═══════════════════════════════════════
+   POMEGRANATE STRIP
+═══════════════════════════════════════ */
+
+.pomegranate-strip {
+
+    position: relative;
+
+    max-width: 1100px;
+
+    height: 150px;
+
+    margin:
+        40px auto 0;
+
+    overflow: hidden;
+}
+
+
+.pomegranate-strip img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    opacity: 0.75;
+
+    mix-blend-mode: luminosity;
+}
+
+
+/* ═══════════════════════════════════════
+   ABOUT
+═══════════════════════════════════════ */
+
+.about-grid {
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 28px;
+}
+
+
+.about-left,
+.about-right {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+
+.bio-panel {
+
+    padding: 30px;
+}
+
+
+.profile-row {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    margin-bottom: 22px;
+}
+
+
+.profile-blob {
+
+    flex-shrink: 0;
+
+    width: 64px;
+    height: 64px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            ellipse at 35% 28%,
+            rgba(255,255,255,0.3),
+            #dc2626 50%,
+            #7f1d1d 100%
+        );
+
+    box-shadow:
+        0 0 28px rgba(220,38,38,0.6),
+        inset 0 2px 0 rgba(255,255,255,0.38);
+
+    animation:
+        blob-morph 9s ease-in-out infinite;
+}
+
+
+.profile-blob span {
+
+    font-family: "Exo 2", sans-serif;
+
+    font-weight: 900;
+
+    color: white;
+
+    font-size: 20px;
+}
+
+
+.profile-row h3 {
+
+    font-family: "Exo 2", sans-serif;
+
+    font-size: 20px;
+
+    color: white;
+
+    margin-bottom: 4px;
+}
+
+
+.profile-row p {
+
+    font-size: 10px;
+
+    letter-spacing: 0.08em;
+
+    color:
+        rgba(252,165,165,0.6);
+}
+
+
+.bio-text {
+
+    position: relative;
+
+    z-index: 2;
+
+    color:
+        rgba(255,200,210,0.78);
+
+    font-size: 13px;
+
+    line-height: 1.75;
+}
+
+
+.bio-text p + p {
+    margin-top: 12px;
+}
+
+
+.bio-text strong {
+    color: #fda4af;
+}
+
+
+.skill-tags {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 22px;
+}
+
+
+.skill-tags span {
+
+    padding: 7px 14px;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(220,38,38,0.5),
+            rgba(244,63,94,0.32)
+        );
+
+    border:
+        1px solid rgba(252,165,165,0.38);
+
+    color: #fca5a5;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 0.12em;
+
+    box-shadow:
+        0 0 10px rgba(220,38,38,0.22);
+}
+
+
+/* ═══════════════════════════════════════
+   SKILLS
+═══════════════════════════════════════ */
+
+.skills-panel {
+
+    padding: 25px;
+}
+
+
+.skills-panel h4 {
+
+    position: relative;
+
+    z-index: 2;
+
+    font-family: "Exo 2", sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 0.14em;
+
+    color: #f43f5e;
+
+    margin-bottom: 18px;
+}
+
+
+.skill {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 15px;
+}
+
+
+.skill:last-child {
+    margin-bottom: 0;
+}
+
+
+.skill-label {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 11px;
+
+    margin-bottom: 6px;
+
+    color:
+        rgba(255,200,210,0.78);
+}
+
+
+.skill-label strong {
+    color: #f43f5e;
+}
+
+
+.progress-background {
+
+    width: 100%;
+
+    height: 11px;
+
+    border-radius: 999px;
+
+    background:
+        rgba(255,180,190,0.1);
+
+    overflow: hidden;
+}
+
+
+.progress-liquid {
+
+    position: relative;
+
+    height: 100%;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #dc2626,
+            #f43f5e,
+            #fb7185
+        );
+
+    box-shadow:
+        0 0 10px rgba(220,38,38,0.55);
+
+    overflow: hidden;
+}
+
+
+.progress-liquid::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 55%;
+
+    background:
+        rgba(255,255,255,0.32);
+
+    border-radius: inherit;
+}
+
+
+/* ═══════════════════════════════════════
+   ABOUT IMAGE
+═══════════════════════════════════════ */
+
+.about-image {
+
+    position: relative;
+
+    height: 260px;
+
+    padding: 0;
+}
+
+
+.about-image img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+.about-image::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(80,0,15,0.55),
+            transparent 60%,
+            rgba(80,0,15,0.7)
+        );
+
+    pointer-events: none;
+}
+
+
+.about-image-overlay {
+
+    position: absolute;
+
+    z-index: 3;
+
+    bottom: 22px;
+    left: 22px;
+}
+
+
+.about-image-overlay div {
+
+    font-family: "Exo 2", sans-serif;
+
+    font-size: 36px;
+
+    font-weight: 900;
+
+    line-height: 1;
+}
+
+
+.about-image-overlay span {
+
+    display: block;
+
+    margin-top: 4px;
+
+    font-family: "Exo 2", sans-serif;
+
+    font-size: 20px;
+
+    font-weight: 900;
+
+    color:
+        rgba(255,255,255,0.4);
+}
+
+
+/* ═══════════════════════════════════════
+   FACTS
+═══════════════════════════════════════ */
+
+.facts-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+
+.fact-card {
+
+    padding: 18px;
+
+    text-align: center;
+}
+
+
+.fact-icon {
+
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 24px;
+
+    margin-bottom: 4px;
+}
+
+
+.fact-card strong {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: block;
+
+    font-family: "Exo 2", sans-serif;
+
+    font-size: 16px;
+
+    color: white;
+
+    text-shadow:
+        0 0 12px rgba(220,38,38,0.45);
+}
+
+
+.fact-card span {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 10px;
+
+    color:
+        rgba(252,165,165,0.5);
+}
+
+
+.contact-about-button {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: block;
+
+    width: 100%;
+
+    padding: 14px;
+
+    border-radius: 16px;
+
+    text-align: center;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dc2626,
+            #f43f5e
+        );
+
+    box-shadow:
+        0 4px 24px rgba(220,38,38,0.42),
+        inset 0 1px 0 rgba(255,255,255,0.32);
+
+    border:
+        1px solid rgba(252,165,165,0.28);
+}
+
+
+/* ═══════════════════════════════════════
+   CONTACT
+═══════════════════════════════════════ */
+
+.contact-section {
+
+    position: relative;
+
+    z-index: 10;
+
+    min-height:
+        calc(100vh - 130px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        80px 24px;
+}
+
+
+.contact-intro {
+
+    max-width: 400px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    color:
+        rgba(255,180,190,0.65);
+
+    margin-bottom: 35px;
+}
+
+
+.email-wrapper {
+
+    position: relative;
+
+    margin-bottom: 55px;
+}
+
+
+.email-button {
+
+    position: relative;
+
+    z-index: 3;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 16px 38px;
+
+    border-radius: 999px;
+
+    font-size: 13px;
+
+    font-weight: 900;
+
+    letter-spacing: 0.06em;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dc2626,
+            #f43f5e,
+            #be123c
+        );
+
+    box-shadow:
+        0 6px 36px rgba(220,38,38,0.55),
+        0 0 70px rgba(220,38,38,0.18),
+        inset 0 2px 0 rgba(255,255,255,0.38);
+
+    border:
+        1px solid rgba(252,165,165,0.32);
+}
+
+
+.email-ring-one {
+    inset: -10px;
+}
+
+
+.email-ring-two {
+    inset: -10px;
+    animation-delay: 1.5s;
+}
+
+
+/* ═══════════════════════════════════════
+   POMEGRANATE CIRCLES
+═══════════════════════════════════════ */
+
+.pomegranate-circles {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 16px;
+
+    flex-wrap: wrap;
+
+    max-width: 500px;
+}
+
+
+.pomegranate-circle {
+
+    width: 110px;
+    height: 110px;
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    animation:
+        float-slow 5s ease-in-out infinite;
+}
+
+
+.pomegranate-circle:nth-child(2) {
+    animation-delay: 1.4s;
+}
+
+
+.pomegranate-circle:nth-child(3) {
+    animation-delay: 2.8s;
+}
+
+
+.pomegranate-circle img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    opacity: 0.8;
+
+    border-radius: 50%;
+}
+
+
+.contact-tags {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 35px;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+}
+
+
+.contact-tags span {
+
+    padding: 10px 18px;
+
+    border-radius: 999px;
+
+    background:
+        rgba(220,38,38,0.18);
+
+    border:
+        1px solid rgba(252,165,165,0.25);
+
+    color:
+        rgba(252,165,165,0.72);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.12);
+}
+
+
+/* ═══════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════ */
+
+.site-footer {
+
+    position: relative;
+
+    z-index: 10;
+
+    padding: 18px 20px;
+
+    text-align: center;
+
+    font-size: 9px;
+
+    letter-spacing: 0.12em;
+
+    background:
+        rgba(60,0,10,0.6);
+
+    border-top:
+        1px solid rgba(220,38,38,0.2);
+
+    color:
+        rgba(252,165,165,0.4);
+}
+
+
+/* ═══════════════════════════════════════
+   ANIMATIONS
+═══════════════════════════════════════ */
+
+@keyframes blob-morph {
+
+    0% {
+        border-radius:
+            60% 40% 30% 70% /
+            60% 30% 70% 40%;
+    }
+
+    25% {
+        border-radius:
+            30% 60% 70% 40% /
+            50% 60% 30% 60%;
+    }
+
+    50% {
+        border-radius:
+            50% 60% 30% 60% /
+            30% 40% 70% 50%;
+    }
+
+    75% {
+        border-radius:
+            70% 30% 50% 40% /
+            60% 50% 30% 40%;
+    }
+
+    100% {
+        border-radius:
+            60% 40% 30% 70% /
+            60% 30% 70% 40%;
+    }
+}
+
+
+@keyframes liquid-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.07);
+    }
+}
+
+
+@keyframes float-slow {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+/* ═══════════════════════════════════════
+   SCROLLBAR
+═══════════════════════════════════════ */
+
+* {
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        rgba(220,38,38,0.4)
+        transparent;
+}
+
+
+*::-webkit-scrollbar {
+    width: 5px;
+}
+
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+*::-webkit-scrollbar-thumb {
+
+    background:
+        rgba(220,38,38,0.4);
+
+    border-radius: 3px;
+}
+
+
+/* ═══════════════════════════════════════
+   MOBILE
+═══════════════════════════════════════ */
+
+@media (max-width: 850px) {
+
+    .site-header {
+
+        flex-wrap: wrap;
+
+        gap: 14px;
+
+        justify-content: center;
+    }
+
+
+    .logo-area {
+        width: 100%;
+        justify-content: center;
+    }
+
+
+    .online-pill {
+
+        position: static;
+
+        transform: none;
+    }
+
+
+    .main-nav {
+
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+
+    .project-grid {
+
+        grid-template-columns: 1fr;
+
+        max-width: 550px;
+    }
+
+
+    .about-grid {
+
+        grid-template-columns: 1fr;
+
+        max-width: 650px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .site-header {
+        padding: 14px;
+    }
+
+
+    .hero-title {
+        font-size: 46px;
+    }
+
+
+    .hero-blob-wrapper,
+    .hero-blob {
+
+        width: 145px;
+        height: 145px;
+    }
+
+
+    .hero-blob span {
+        font-size: 32px;
+    }
+
+
+    .quick-links {
+
+        grid-template-columns: 1fr;
+
+        max-width: 350px;
+    }
+
+
+    .content-section,
+    .contact-section {
+
+        padding:
+            60px 16px;
+    }
+
+
+    .section-header h2 {
+        font-size: 38px;
+    }
+
+
+    .project-image {
+        height: 200px;
+    }
+
+
+    .facts-grid {
+        gap: 10px;
+    }
+
+
+    .email-button {
+
+        padding:
+            15px 24px;
+
+        font-size: 11px;
+    }
+
+
+    .pomegranate-circle {
+
+        width: 90px;
+        height: 90px;
+    }
+
+}
