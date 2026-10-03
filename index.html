@@ -1,62 +1,64 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Precious Karley — Precious Karley</title>
-<style>
-:root{
-  --pink:#ff9bfa;
-  --ink:#14213d;
-  --burgundy:#c8005d;
-  --burgundy-dark:#7a003d;
-  --paper:#fff8ff;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--pink);color:var(--ink);font-family:Georgia,"Times New Roman",serif}
-a{color:inherit}
-.site-nav{position:sticky;top:0;z-index:20;background:var(--pink);padding:18px 20px 16px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
-.site-nav a{display:inline-flex;align-items:center;justify-content:center;min-height:29px;padding:5px 13px;background:var(--burgundy);border:4px solid var(--burgundy-dark);border-radius:18px;color:#fff;text-decoration:none;font-size:15px;line-height:1;box-shadow:1px 2px 4px rgba(192,0,205,.4)}
-.site-nav a:hover,.site-nav a.active{background:#c80000}
-main{width:min(1120px,calc(100% - 40px));margin:0 auto;padding:72px 0 110px}
-.hero{min-height:68vh;display:flex;flex-direction:column;justify-content:center;max-width:900px}
-.hero.compact{min-height:48vh}
-.eyebrow{font-size:18px;letter-spacing:1px;margin:0 0 18px}
-h1{font-size:clamp(56px,9vw,110px);line-height:.92;letter-spacing:-3px;font-weight:400;margin:0 0 28px}
-h2{font-size:42px;line-height:1;margin:0 0 16px;font-weight:400}
-.lead{font-size:24px;line-height:1.25;max-width:720px;margin:0}
-.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.project-card{background:var(--paper);padding:14px;border:1px solid rgba(20,33,61,.15)}
-.project-card p,.text-section p{font-size:20px;line-height:1.35}
-.image-placeholder{height:330px;background:#d9d9d9;display:flex;align-items:center;justify-content:center;color:#666;font-family:Arial,sans-serif}
-.text-section{max-width:760px;padding:40px 0}
-.back{margin-top:40px}
-.back a{font-size:18px}
-@media(max-width:760px){
-  .site-nav{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;padding:12px}
-  .site-nav a{flex:0 0 auto}
-  main{width:min(100% - 24px,1120px);padding:48px 0 80px}
-  h1{letter-spacing:-2px}
-  .lead{font-size:20px}
-  .project-grid{grid-template-columns:1fr}
-  .image-placeholder{height:260px}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Precious Karley - Homepage</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<nav class="site-nav" aria-label="Portfolio navigation">
-<a href="index.html" class="active">HOME</a><a href="medical-art.html">MEDICAL ART</a><a href="3d-works.html">3D WORKS</a><a href="graphic-design.html">GRAPHIC DESIGN</a><a href="illustration.html">ILLUSTRATION</a><a href="games.html">GAMES</a><a href="about-me.html">ABOUT ME</a>
-<a href="illustration-2.html">ILLUSTRATION 2</a><a href="project.html">PROJECT</a>
-</nav>
-<main>
 
-        <section class="hero">
-          <p class="eyebrow">PORTFOLIO</p>
-          <h1>Precious Karley</h1>
-          <p class="lead">Creative portfolio spanning medical art, 3D work, graphic design, illustration and games.</p>
-        </section>
-        
+  <!-- Shared Header -->
+  <header class="site-header">
+    <h1 class="site-title"><a href="index.html">Precious Karley</a></h1>
+    <nav class="top-nav">
+      <a href="index.html" class="nav-btn active">Home</a>
+      <a href="3d-works.html" class="nav-btn">3D Works</a>
+      <a href="about-me.html" class="nav-btn">About Me</a>
+      <a href="games.html" class="nav-btn">Games</a>
+      <a href="graphic-design.html" class="nav-btn">Graphic Design</a>
+      <a href="illustration.html" class="nav-btn">Illustration</a>
+      <a href="illustration-2.html" class="nav-btn">Illustration 2</a>
+      <a href="medical-art.html" class="nav-btn">Medical Art</a>
+      <a href="project.html" class="nav-btn">Projects</a>
+    </nav>
+  </header>
+
+  <!-- Readymag Style Homepage Content -->
+  <main class="main-container">
+    <section class="readymag-hero">
+      <h2 class="hero-headline">Visual Design, 3D Art & Interactive Experiences</h2>
+      <p class="hero-subhead">A curated portfolio exploring digital craft, medical visualization, and game design.</p>
+    </section>
+
+    <section class="readymag-grid">
+      <a href="3d-works.html" class="grid-item span-8">
+        <span class="item-title">3D Works & Modeling</span>
+      </a>
+      <a href="graphic-design.html" class="grid-item span-4">
+        <span class="item-title">Graphic Design</span>
+      </a>
+      <a href="medical-art.html" class="grid-item span-4">
+        <span class="item-title">Medical Art</span>
+      </a>
+      <a href="illustration.html" class="grid-item span-8">
+        <span class="item-title">Illustration Gallery</span>
+      </a>
+      <a href="games.html" class="grid-item span-6">
+        <span class="item-title">Game Projects</span>
+      </a>
+      <a href="project.html" class="grid-item span-6">
+        <span class="item-title">Featured Case Studies</span>
+      </a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; Precious Karley. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
 <div class="back"><a href="index.html">← Home</a></div>
 </main>
 </body>
