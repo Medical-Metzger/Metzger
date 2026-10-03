@@ -17,7 +17,7 @@ a{color:inherit}
 
 .site-nav a:hover,.site-nav a.active{background:#c80000}
 
-main{width:min(1120px,calc(100% - 40px));margin:0 auto;padding:72px 0 110px}
+main{width:min(1120px,calc(100% - 40px));margin:0 auto;padding: 20px;px 0 110px}
 
 .hero{min-height:68vh;display:flex;flex-direction:column;justify-content:center;max-width:900px}
 .hero.compact{min-height:48vh}
