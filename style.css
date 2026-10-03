@@ -108,14 +108,30 @@ h2{font-size:42px;line-height:1;margin:0 0 16px;font-weight:400}
 .project-card {
   cursor: pointer;
   transition: transform 0.2s ease;
+  min-width: 0; overflow: hidden;
 }
+.project-link { display: block; } 
+/* Keep the video at card size */ 
+.card-video { display: block;
+   width: 100%; 
+   height: 200px;
+    max-width: 100%; 
+    object-fit: cover; 
+    border-radius:
+     8px; }
+     
 .project-card:hover {
   transform: translateY(-4px);
 }
 
-
+  .project-grid{grid-template-columns:1fr}
+  .image-placeholder{height:260px}
 
 .image-placeholder{height:330px;background:#d9d9d9;display:flex;align-items:center;justify-content:center;color:#666;font-family:Arial,sans-serif}
+
+
+
+
 .text-section{max-width:760px;padding:40px 0}
 .back{margin-top:40px}
 .back a{font-size:18px}
@@ -125,6 +141,5 @@ h2{font-size:42px;line-height:1;margin:0 0 16px;font-weight:400}
   main{width:min(100% - 24px,1120px);padding:48px 0 80px}
   h1{letter-spacing:-2px}
   .lead{font-size:20px}
-  .project-grid{grid-template-columns:1fr}
-  .image-placeholder{height:260px}
+
 }
