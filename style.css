@@ -1,1 +1,188 @@
+/* ==========================================================================
+   Global Reset & Base Typography
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #fcfcfc;
+  color: #111111;
+  line-height: 1.6;
+  padding: 40px 20px;
+}
+
+/* ==========================================================================
+   Header & Top Navigation Layout
+   ========================================================================== */
+.site-header {
+  max-width: 1200px;
+  margin: 0 auto 50px auto;
+  text-align: center;
+}
+
+.site-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.site-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.top-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.nav-btn {
+  display: inline-block;
+  padding: 8px 18px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #333333;
+  text-decoration: none;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-btn:hover,
+.nav-btn.active {
+  background-color: #111111;
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   Main Content Layout
+   ========================================================================== */
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 60vh;
+}
+
+/* Page Header / Subtitles */
+.page-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   Readymag Homepage Layout Styles (index.html)
+   ========================================================================== */
+.readymag-hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 35vh;
+  padding: 40px 0;
+}
+
+.hero-headline {
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  max-width: 900px;
+  margin-bottom: 20px;
+}
+
+.hero-subhead {
+  font-size: 1.25rem;
+  color: #666666;
+  max-width: 600px;
+}
+
+/* Asymmetric Readymag Portfolio Grid */
+.readymag-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.grid-item {
+  position: relative;
+  overflow: hidden;
+  background-color: #eaeaea;
+  border-radius: 2px;
+  min-height: 320px;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: flex-end;
+  padding: 24px;
+  transition: transform 0.3s ease;
+}
+
+.grid-item:hover {
+  transform: translateY(-4px);
+}
+
+.grid-item .item-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 6px 12px;
+  border-radius: 2px;
+}
+
+/* Asymmetric Span Classes */
+.span-8 { grid-column: span 8; }
+.span-4 { grid-column: span 4; }
+.span-6 { grid-column: span 6; }
+.span-12 { grid-column: span 12; }
+
+/* ==========================================================================
+   Standard Gallery / Content Grids
+   ========================================================================== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.gallery-card {
+  background-color: #f4f4f4;
+  border-radius: 6px;
+  padding: 20px;
+  min-height: 250px;
+}
+
+/* Footer */
+.site-footer {
+  max-width: 1200px;
+  margin: 80px auto 0 auto;
+  padding-top: 20px;
+  border-top: 1px solid #e5e5e5;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #888888;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+  .hero-headline { font-size: 2.5rem; }
+  .span-8, .span-4, .span-6 { grid-column: span 12; }
+  .top-nav { gap: 8px; }
+  .nav-btn { font-size: 0.75rem; padding: 6px 12px; }
+}
