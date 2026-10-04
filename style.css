@@ -72,42 +72,71 @@ h2{font-size:42px;line-height:1;margin:0 0 16px;font-weight:400}
 /* Show the full NHS thumbnail without cropping */ 
 .project-card video[src], .project-card video:has(source[src*="nhs_thumbnail"]) { object-fit: contain !important;
 }
+/* Glossy silver and pink video frame */
 .video-container {
-  width: 100%;
-  max-width: 1400px;
-  aspect-ratio: 16 / 9;
-  margin: 40px auto;
-  padding: 10px;
+position: relative;
+display: block;
+width: 100%;
+max-width: 900px;
+aspect-ratio: 16 / 9;
+margin: 40px auto;
+padding: 10px;
 
-  /* Silver glossy frame */
-  background: linear-gradient(
-    135deg,
-    #ffffff 0%,
-    #e8e8e8 15%,
-    #ffffff 30%,
-    #b8b8b8 50%,
-    #fdfdfd 70%,
-    #c8c8c8 100%
-  );
+/* Shiny silver frame */
+background: linear-gradient(
+135deg,
+#ffffff 0%,
+#e8e8e8 15%,
+#ffffff 30%,
+#b8b8b8 50%,
+#fdfdfd 70%,
+#c8c8c8 100%
+);
 
-  border: 1px solid #ffffff;
-  border-radius: 16px;
+border: 2px solid #ffffff;
+border-radius: 16px;
 
-  /* Raised, glossy 2006 look */
-  box-shadow:
-    0 0 0 2px #c8005d,
-    0 0 12px rgba(200, 0, 93, 0.45),
-    inset 0 2px 3px rgba(255, 255, 255, 0.95),
-    0 8px 18px rgba(0, 0, 0, 0.25);
+/* Pink outline and glossy raised effect */
+box-shadow:
+0 0 0 4px #c8005d,
+0 0 14px rgba(200, 0, 93, 0.55),
+inset 0 2px 4px rgba(255, 255, 255, 0.95),
+0 8px 18px rgba(0, 0, 0, 0.25);
 
-  box-sizing: border-box;
-  overflow: hidden;
+box-sizing: border-box;
+overflow: hidden;
+flex-shrink: 0;
 }
 
 .video-container iframe {
-  width: 100%;
-  height: 100%;
-  display: block;
-  border: 1px solid #999;
-  border-radius: 8px;
+display: block;
+width: 100%;
+height: 100%;
+position: absolute;
+inset: 0;
+box-sizing: border-box;
+border: 2px solid #999;
+border-radius: 10px;
+}
+
+
+.image-gallery {
+display: grid;
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 24px;
+margin: 40px 0;
+}
+
+.image-gallery img {
+display: block;
+width: 100%;
+height: auto;
+border-radius: 12px;
+box-shadow: 0 4px 14px rgba(122, 0, 61, 0.25);
+}
+
+@media (max-width: 600px) {
+.image-gallery {
+grid-template-columns: 1fr;
+}
 }
