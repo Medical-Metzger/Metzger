@@ -4,6 +4,7 @@
   --ink: #14213d;
   --burgundy: #c8005d;
   --burgundy-dark: #7a003d;
+  --raspberry: #98255d;
   --paper: #fff8ff;
 }
 
@@ -110,6 +111,7 @@ main {
 }
 
 h1 {
+   padding-left: 30px;
   font-size: clamp(56px, 9vw, 110px);
   line-height: .92;
   letter-spacing: -3px;
@@ -118,13 +120,22 @@ h1 {
 }
 
 h2 {
+   padding-left: 30px;
   font-size: 42px;
   line-height: 1;
   margin: 0 0 16px;
   font-weight: 400
 }
 
+h3 {
+   padding-left: 30px;
+  font-size: 18px;
+  letter-spacing: 1px;
+  margin: 0 0 18px
+}
+
 .lead {
+   padding-left: 30px;
   font-size: 24px;
   line-height: 1.25;
   max-width: 800px;
@@ -132,18 +143,18 @@ h2 {
 }
 
 .text-section {
+
   max-width: none;
   width: 100%;
   padding: 40px 0
 }
 
 .back {
-  margin-top: 40px
+   padding-left: 30px;
+  margin-top: 40px;
+   font-size: 18px
 }
 
-.back a {
-  font-size: 18px
-}
 
 @media(max-width:600px) {
   .site-nav {
@@ -700,7 +711,7 @@ body {
 
 /* Keep the main content area light pink */
 main {
-  background: #ffb5f7;
+  background: var(--raspberry, #98255d);
   max-width: 1400px;
   margin: 0 auto;
   min-height: 100vh;
