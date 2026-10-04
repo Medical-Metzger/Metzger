@@ -798,3 +798,120 @@ main {
   }
 }
 
+
+
+
+/* ========================================
+   FEATURED WORK — PROJECT GRID
+======================================== */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+  align-items: stretch;
+}
+
+/* Project cards */
+.project-card {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid rgba(200, 0, 93, 0.12);
+  border-radius: 22px;
+
+  background: linear-gradient(
+    145deg,
+    #fffaff 0%,
+    #fff0fa 55%,
+    #f9dced 100%
+  );
+
+  box-shadow:
+    0 8px 22px rgba(83, 0, 48, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Hover effect */
+.project-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 15px 30px rgba(83, 0, 48, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+/* Make project links consistent */
+.project-card .project-link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Video and image previews */
+.project-card .card-video,
+.project-card .card-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  height: auto;
+  object-fit: cover;
+  border-radius: 14px;
+  background: #f7e5f1;
+
+  box-shadow: 0 4px 12px rgba(83, 0, 48, 0.12);
+}
+
+/* Project titles */
+.project-card .project-link h2 {
+  margin: 18px 0 9px;
+  padding: 0;
+  color: #7a003d;
+  font-size: clamp(21px, 2vw, 28px);
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+/* Project descriptions */
+.project-card .project-link p {
+  margin: 0 0 5px;
+  padding: 0;
+  color: #4e2940;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Title hover */
+.project-card .project-link:hover h2 {
+  color: #c8005d;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+/* Mobile layout */
+@media (max-width: 700px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .project-card {
+    padding: 15px;
+    border-radius: 18px;
+  }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .project-card {
+    transition: none;
+  }
+
+  .project-card:hover {
+    transform: none;
+  }
+}
