@@ -739,3 +739,62 @@ main {
     padding: 20px;
   }
 }
+
+
+
+
+
+/* ===== AXIS COMPARISON PROJECT CARD ===== */
+
+.project-card .medical-project-link {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.project-card .medical-project-media {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #fff8ff;
+}
+
+.project-card .medical-project-link h2 {
+  font-size: clamp(24px, 2.2vw, 32px);
+  line-height: 1.2;
+  font-weight: 400;
+  margin: 22px 0 12px;
+  color: var(--ink);
+  padding-left: 0;
+}
+
+.project-card > p {
+  font-size: 19px;
+  line-height: 1.5;
+  margin: 0 0 8px;
+  color: var(--ink);
+  padding-left: 0;
+}
+
+.project-card .medical-project-link:hover h2 {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+/* Mobile sizing */
+@media (max-width: 700px) {
+  .project-card .medical-project-link h2 {
+    font-size: 26px;
+  }
+
+  .project-card > p {
+    font-size: 17px;
+  }
+}
+
