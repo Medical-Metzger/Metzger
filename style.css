@@ -91,7 +91,7 @@ main {
 }
 
 .hero {
-  min-height: 68vh;
+  min-height: 52vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
