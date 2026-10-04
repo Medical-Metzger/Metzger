@@ -692,3 +692,18 @@ h2 {
     right: calc(50% - 60px);
   }
 }
+
+/* Dark pink-purple-grey sides */
+body {
+  background: #887080;
+}
+
+/* Keep the main content area light pink */
+main {
+  background: #ffb5f7;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 100vh;
+  box-shadow: 0 0 35px rgba(55, 30, 50, 0.18);
+
+}
