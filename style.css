@@ -106,7 +106,7 @@ h2{font-size:42px;line-height:1;margin:0 0 16px;font-weight:400}
 .card-video {
   display: block;
   width: 100%;
-  height: 600px;
+  height: 720px;
   max-width: 100%;
   object-fit: cover;
   border-radius: 8px;
@@ -116,7 +116,7 @@ h2{font-size:42px;line-height:1;margin:0 0 16px;font-weight:400}
 .gard.image,
 .image-placeholder {
   width: 100%;
-  height: 600px;
+  height: 720px;
   box-sizing: border-box;
     border-radius: 8px;
   background: #d9d9d9;
@@ -141,7 +141,7 @@ h2{font-size:42px;line-height:1;margin:0 0 16px;font-weight:400}
   }
 
   .card-video {
-    height: 600px;
+    height: 740px;
   }
 }
 
