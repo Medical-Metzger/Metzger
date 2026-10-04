@@ -276,6 +276,21 @@ h2 {
   object-fit: contain !important;
 }
 
+/* YouTube video inside project cards */
+.project-card .video-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto 20px;
+  aspect-ratio: 16 / 9;
+  padding: 6px;
+  border-radius: 12px;
+  box-shadow: 0 0 0 2px #c8005d, 0 4px 10px rgba(122, 0, 61, 0.25);
+}
+
+.project-card .video-container iframe {
+  border-radius: 7px;
+}
+
 /* Glossy silver and pink video frame */
 .video-container {
   position: relative;
@@ -424,3 +439,4 @@ h2 {
 .site-nav a[href="illustration.html"].active {
   background: linear-gradient(180deg, #ed48c5 0%, #df1eae 35%, #bd078b 70%, #85005d 100%);
 }
+
