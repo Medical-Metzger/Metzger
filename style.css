@@ -55,10 +55,23 @@ a {
   box-shadow: 1px 2px 4px rgba(192, 0, 205, .4)
 }
 
+
+/* Red overlay on hover and active navigation buttons */
 .site-nav a:hover,
 .site-nav a.active {
-  background: #c80000
+  background: linear-gradient(
+    rgba(200, 0, 0, 0.65),
+    rgba(200, 0, 0, 0.65)
+  ), linear-gradient(
+    180deg,
+    #ed48c5 0%,
+    #df1eae 35%,
+    #bd078b 70%,
+    #85005d 100%
+  )!important;
 }
+
+
 
 
 .cute-button {
