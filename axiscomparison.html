@@ -119,6 +119,7 @@
       aria-label="Image details"
     >
 
+      <!-- Close button -->
       <button
         type="button"
         class="lightbox-close"
@@ -126,6 +127,23 @@
         &times;
       </button>
 
+      <!-- Previous image button -->
+      <button
+        type="button"
+        class="lightbox-arrow lightbox-prev"
+        aria-label="Previous image">
+        &#10094;
+      </button>
+
+      <!-- Next image button -->
+      <button
+        type="button"
+        class="lightbox-arrow lightbox-next"
+        aria-label="Next image">
+        &#10095;
+      </button>
+
+      <!-- Enlarged image and description -->
       <div class="lightbox-content">
         <img id="lightbox-image" src="" alt="">
         <h2 id="lightbox-title"></h2>
@@ -136,81 +154,143 @@
 
   </main>
 
-  <!-- Image interaction script: keep this at the bottom -->
+  <!-- Gallery JavaScript -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
+
       const lightbox = document.getElementById("image-lightbox");
       const lightboxImage = document.getElementById("lightbox-image");
       const lightboxTitle = document.getElementById("lightbox-title");
       const lightboxDescription = document.getElementById("lightbox-description");
       const closeButton = document.querySelector(".lightbox-close");
+      const previousButton = document.querySelector(".lightbox-prev");
+      const nextButton = document.querySelector(".lightbox-next");
 
-      if (
-        !lightbox ||
-        !lightboxImage ||
-        !lightboxTitle ||
-        !lightboxDescription ||
-        !closeButton
-      ) {
-        console.error("Image lightbox elements could not be found.");
-        return;
-      }
+      const galleryImages = Array.from(
+        document.querySelectorAll(".axis-image-row img")
+      );
 
-      const galleryImages = document.querySelectorAll(".axis-image-row img");
+      let currentIndex = 0;
+      let previousFocus = null;
 
-      function openLightbox(img) {
+      // Display a selected image and its description
+      function showImage(index) {
+        currentIndex =
+          (index + galleryImages.length) % galleryImages.length;
+
+        const img = galleryImages[currentIndex];
+
         lightboxImage.src = img.src;
         lightboxImage.alt = img.alt;
-        lightboxTitle.textContent = img.dataset.title || img.alt;
-        lightboxDescription.textContent = img.dataset.description || "";
+
+        lightboxTitle.textContent =
+          img.dataset.title || img.alt;
+
+        lightboxDescription.textContent =
+          img.dataset.description || "";
+
+        lightbox.setAttribute(
+          "aria-label",
+          (img.dataset.title || img.alt) +
+          ", image " + (currentIndex + 1) +
+          " of " + galleryImages.length
+        );
+      }
+
+      // Open the image gallery
+      function openLightbox(index) {
+        previousFocus = document.activeElement;
+
+        showImage(index);
 
         lightbox.classList.add("open");
         lightbox.setAttribute("aria-hidden", "false");
+
         document.body.style.overflow = "hidden";
+
         closeButton.focus();
       }
 
+      // Close the image gallery
       function closeLightbox() {
         lightbox.classList.remove("open");
         lightbox.setAttribute("aria-hidden", "true");
+
         lightboxImage.src = "";
         document.body.style.overflow = "";
+
+        if (previousFocus) {
+          previousFocus.focus();
+        }
       }
 
-      galleryImages.forEach(function (img) {
+      // Make every gallery image clickable and keyboard accessible
+      galleryImages.forEach(function (img, index) {
+
         img.style.cursor = "pointer";
         img.setAttribute("tabindex", "0");
         img.setAttribute("role", "button");
+
         img.setAttribute(
           "aria-label",
-          "View " + (img.dataset.title || img.alt) + " with description"
+          "View " + (img.dataset.title || img.alt)
         );
 
         img.addEventListener("click", function () {
-          openLightbox(img);
+          openLightbox(index);
         });
 
         img.addEventListener("keydown", function (event) {
           if (event.key === "Enter" || event.key === " ") {
             event.preventDefault();
-            openLightbox(img);
+            openLightbox(index);
           }
         });
+
       });
 
+      // Close button
       closeButton.addEventListener("click", closeLightbox);
 
+      // Previous and next buttons
+      previousButton.addEventListener("click", function () {
+        showImage(currentIndex - 1);
+      });
+
+      nextButton.addEventListener("click", function () {
+        showImage(currentIndex + 1);
+      });
+
+      // Close when clicking the dark background
       lightbox.addEventListener("click", function (event) {
         if (event.target === lightbox) {
           closeLightbox();
         }
       });
 
+      // Keyboard controls while the gallery is open
       document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape" && lightbox.classList.contains("open")) {
+
+        if (!lightbox.classList.contains("open")) {
+          return;
+        }
+
+        if (event.key === "ArrowRight") {
+          event.preventDefault();
+          showImage(currentIndex + 1);
+        }
+
+        if (event.key === "ArrowLeft") {
+          event.preventDefault();
+          showImage(currentIndex - 1);
+        }
+
+        if (event.key === "Escape") {
           closeLightbox();
         }
+
       });
+
     });
   </script>
 

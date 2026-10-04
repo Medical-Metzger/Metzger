@@ -105,9 +105,11 @@ main {
 }
 
 .eyebrow {
+  color: #c8005d;
+  padding-left: 30px;
   font-size: 18px;
   letter-spacing: 1px;
-  margin: 0 0 18px
+  margin: 0 0 18px;
 }
 
 h1 {
