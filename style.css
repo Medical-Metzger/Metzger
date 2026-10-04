@@ -104,7 +104,7 @@ h2{font-size:42px;line-height:1;margin:0 0 16px;font-weight:400}
 /* Video inside project cards */
 .card-video {
   display: block;
-  height: 250px;
+  height: 200px;
   max-width: 100%;
   object-fit: cover;
   border-radius: 8px;
@@ -119,7 +119,7 @@ h2{font-size:42px;line-height:1;margin:0 0 16px;font-weight:400}
   Height: auto;
   aspect-ratio: 16 / 9;
 object-fit: cover;
-  height: 250px;
+  height: 200px;
   box-sizing: border-box;
     border-radius: 8px;
   background: #d9d9d9;
@@ -144,7 +144,7 @@ object-fit: cover;
   }
 
   .card-video {
-    height: 250px;
+    height: 200px;
   }
 }
 
