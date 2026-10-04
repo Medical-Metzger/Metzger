@@ -1,90 +1,100 @@
+
 <!doctype html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Medical Art — Precious Karley</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
   <nav class="site-nav" aria-label="Portfolio navigation">
-    <a href="index.html">HOME</a><a href="medical-art.html" class="active">MEDICAL ART</a><a href="3d-works.html">3D
-      WORKS</a><a href="graphic-design.html">GRAPHIC DESIGN</a><a href="illustration.html">ILLUSTRATION</a><a
-      href="games.html">SIMULATIONS</a><a href="about-me.html">ABOUT ME</a>
+    <a href="index.html">HOME</a>
+    <a href="medical-art.html" class="active">MEDICAL ART</a>
+    <a href="3d-works.html">3D WORKS</a>
+    <a href="graphic-design.html">GRAPHIC DESIGN</a>
+    <a href="illustration.html">ILLUSTRATION</a>
+    <a href="games.html">SIMULATIONS</a>
+    <a href="about-me.html">ABOUT ME</a>
     <a href="project.html">PROJECT</a>
   </nav>
+
   <main>
 
+    <!-- Page heading -->
     <section class="hero compact">
-      <p class="eyebrow"><a href="index.html">Home</a> // <a href="medical-art.html">Medical Art</a></p>
+      <p class="eyebrow">
+        <a href="index.html">Home</a> //
+        <a href="medical-art.html">Medical Art</a>
+      </p>
 
       <h1>Medical Art</h1>
       <p class="lead">Medical art portfolio</p>
     </section>
 
-    
-    
+    <!-- Axis Comparison project preview -->
+    <section class="medical-gallery">
 
-            <section class="project-grid">
-          <article class="project-card">
+      <article class="medical-project">
 
+        <a href="axiscomparison.html" class="medical-project-link">
 
-                  <video class="card-video" autoplay loop muted playsinline>
-         <source src="medical illustration/axis/axis_thumbnail.mp4" type="video/mp4"> </video>
+          <video
+            class="medical-project-media"
+            autoplay
+            loop
+            muted
+            playsinline
+            aria-label="Preview of the Axis Comparison project">
 
-<a href="axiscomparison.html" class="project-link">
-  <h2>Axis Comparison</h2>
+            <source
+              src="medical illustration/axis/axis_thumbnail.mp4"
+              type="video/mp4">
 
+            Your browser does not support video playback.
+          </video>
 
-            <p>A visualising single photon emission computed tomography (SPECT) Output.</p></article>
+          <h2>Axis Comparison</h2>
 
-          <article class="project-card"><div
-             class="image-placeholder">
-            </div>
-            
-                
+        </a>
 
-      
-<section class="medical-gallery">
+        <p>
+          A visualisation of single photon emission computed
+          tomography (SPECT) output.
+        </p>
 
-  <!-- Project 1: Axis Comparison -->
-  <article class="medical-project">
-    <a href="axiscomparison.html" class="medical-project-link">
-      <video class="medical-project-media" autoplay loop muted playsinline>
-        <source src="medical illustration/axis/axis_thumbnail.mp4" type="video/mp4">
-      </video>
-      <h2>Axis Comparison</h2>
-    </a>
-    <p>A visualisation of single photon emission computed tomography (SPECT) output.</p>
-  </article>
+      </article>
 
-      <section class="axis-image-row" aria-label="Medical image gallery, second row">
+    </section>
+
+    <!-- Medical image gallery -->
+    <section
+      class="axis-image-row"
+      aria-label="Medical image gallery">
 
       <img
         src="medical%20illustration/axis/verticalaxisoutput.PNG"
         alt="Vertical axis visualisation of heart anatomy"
         data-title="Vertical Axis"
         data-description="A visualisation of heart anatomy using SPECT imaging data."
-        loading="lazy"
-      >
+        loading="lazy">
 
       <img
         src="medical%20illustration/axis/shortaxisoutput.png"
         alt="Short axis visualisation of heart anatomy"
         data-title="Short Axis"
         data-description="A short-axis view of the anatomical data."
-        loading="lazy"
-      >
+        loading="lazy">
 
       <img
         src="medical%20illustration/axis/horizontalaxisoutput.PNG"
         alt="Horizontal axis visualisation of heart anatomy"
         data-title="Horizontal Axis"
         data-description="A horizontal-axis view of the anatomical data."
-        loading="lazy"
-      >
+        loading="lazy">
 
     </section>
 
@@ -95,10 +105,8 @@
       aria-hidden="true"
       role="dialog"
       aria-modal="true"
-      aria-label="Image details"
-    >
+      aria-label="Image details">
 
-      <!-- Close button -->
       <button
         type="button"
         class="lightbox-close"
@@ -106,7 +114,6 @@
         &times;
       </button>
 
-      <!-- Previous image button -->
       <button
         type="button"
         class="lightbox-arrow lightbox-prev"
@@ -114,7 +121,6 @@
         &#10094;
       </button>
 
-      <!-- Next image button -->
       <button
         type="button"
         class="lightbox-arrow lightbox-next"
@@ -122,13 +128,21 @@
         &#10095;
       </button>
 
-      <!-- Enlarged image and description -->
       <div class="lightbox-content">
         <img id="lightbox-image" src="" alt="">
         <h2 id="lightbox-title"></h2>
         <p id="lightbox-description"></p>
       </div>
 
+    </div>
+
+    <!-- Back link -->
+    <div class="back">
+      <a
+        href="index.html"
+        onclick="if (document.referrer && new URL(document.referrer).origin === location.origin) { history.back(); return false; }">
+        ← Back
+      </a>
     </div>
 
   </main>
@@ -149,10 +163,22 @@
         document.querySelectorAll(".axis-image-row img")
       );
 
+      if (
+        !lightbox ||
+        !lightboxImage ||
+        !lightboxTitle ||
+        !lightboxDescription ||
+        !closeButton ||
+        !previousButton ||
+        !nextButton ||
+        galleryImages.length === 0
+      ) {
+        return;
+      }
+
       let currentIndex = 0;
       let previousFocus = null;
 
-      // Display a selected image and its description
       function showImage(index) {
         currentIndex =
           (index + galleryImages.length) % galleryImages.length;
@@ -176,7 +202,6 @@
         );
       }
 
-      // Open the image gallery
       function openLightbox(index) {
         previousFocus = document.activeElement;
 
@@ -184,13 +209,11 @@
 
         lightbox.classList.add("open");
         lightbox.setAttribute("aria-hidden", "false");
-
         document.body.style.overflow = "hidden";
 
         closeButton.focus();
       }
 
-      // Close the image gallery
       function closeLightbox() {
         lightbox.classList.remove("open");
         lightbox.setAttribute("aria-hidden", "true");
@@ -203,9 +226,7 @@
         }
       }
 
-      // Make every gallery image clickable and keyboard accessible
       galleryImages.forEach(function (img, index) {
-
         img.style.cursor = "pointer";
         img.setAttribute("tabindex", "0");
         img.setAttribute("role", "button");
@@ -225,13 +246,10 @@
             openLightbox(index);
           }
         });
-
       });
 
-      // Close button
       closeButton.addEventListener("click", closeLightbox);
 
-      // Previous and next buttons
       previousButton.addEventListener("click", function () {
         showImage(currentIndex - 1);
       });
@@ -240,16 +258,13 @@
         showImage(currentIndex + 1);
       });
 
-      // Close when clicking the dark background
       lightbox.addEventListener("click", function (event) {
         if (event.target === lightbox) {
           closeLightbox();
         }
       });
 
-      // Keyboard controls while the gallery is open
       document.addEventListener("keydown", function (event) {
-
         if (!lightbox.classList.contains("open")) {
           return;
         }
@@ -267,12 +282,10 @@
         if (event.key === "Escape") {
           closeLightbox();
         }
-
       });
 
     });
   </script>
 
-<div class="back"> <a href="index.html" onclick="if (document.referrer && new URL(document.referrer).origin === location.origin) { history.back(); return false; }">← Back</a> </div>
-</div>
-
+</body>
+</html>
