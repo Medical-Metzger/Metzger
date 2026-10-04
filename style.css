@@ -386,7 +386,7 @@ h3 {
   justify-content: center;
   min-height: 29px;
   padding: 5px 13px;
-  background: linear-gradient(180deg, #ed48c5 0%, #df1eae 35%, #bd078b 70%, #85005d 100%);
+  background: linear-gradient(180deg, #ed48c5 0%, #df1eae 35%, #bd078b 70%, #85005d 2%);
   border: 4px solid #7a003d;
   border-radius: 18px;
   color: #fff;
@@ -401,22 +401,7 @@ h3 {
   transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Subtle pink reflection */
-.site-nav a[href="medical-art.html"]::before,
-.site-nav a[href="3d-works.html"]::before,
-.site-nav a[href="graphic-design.html"]::before,
-.site-nav a[href="illustration.html"]::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 2px;
-  left: 10%;
-  width: 80%;
-  height: 42%;
-  border-radius: 50%;
-  background: linear-gradient(180deg, rgba(255, 180, 238, 0.3), rgba(255, 135, 220, 0.12) 4%, transparent);
-  pointer-events: none;
-}
+
 
 
 /* Hover */
@@ -428,6 +413,10 @@ h3 {
   filter: brightness(1.08) saturate(1.1);
   box-shadow: 0 0 7px rgba(230, 0, 165, 0.35), 1px 3px 5px rgba(122, 0, 61, 0.35), inset 0 1px 3px rgba(255, 190, 240, 0.3);
 }
+
+
+
+
 
 /* Active portfolio category */
 .site-nav a[href="medical-art.html"].active,
@@ -717,4 +706,62 @@ main {
   min-height: 100vh;
   box-shadow: 0 0 35px rgba(55, 30, 50, 0.18);
 
+}
+
+
+/* Medical Art gallery: two projects per row, no card borders */
+.medical-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 55px 40px;
+  padding: 30px 40px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.medical-project {
+  min-width: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.medical-project-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.medical-project-media {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  transition: transform 0.25s ease;
+}
+
+.medical-project-link:hover .medical-project-media {
+  transform: scale(1.02);
+}
+
+.medical-project h2 {
+  margin: 18px 0 8px;
+}
+
+.medical-project p {
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* Stack projects on smaller screens */
+@media (max-width: 700px) {
+  .medical-gallery {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 20px;
+  }
 }
