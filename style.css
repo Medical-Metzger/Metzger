@@ -67,3 +67,8 @@ h2{font-size:42px;line-height:1;margin:0 0 16px;font-weight:400}
   h1{letter-spacing:-2px}
   .lead{font-size:20px}
 }
+
+
+
+
+/* FORCE LARGE PORTFOLIO CARDS */ .project-grid { display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 32px !important; width: 100% !important; max-width: 1120px !important; height: auto !important; margin: 40px auto !important; align-items: stretch; } .project-card { width: 100% !important; min-width: 0; min-height: 420px !important; height: auto !important; padding: 24px !important; overflow: visible !important; } .project-card img, .project-card .card-image, .project-card .image-placeholder, .project-card video, .project-card .card-video { display: block; width: 100% !important; height: 280px !important; max-height: none !important; object-fit: cover; border-radius: 10px; } .project-card h2, .project-card h3 { font-size: 30px !important; line-height: 1.2; margin: 18px 0 12px; } .project-card p { font-size: 18px !important; line-height: 1.5; } @media (max-width: 600px) { .project-grid { grid-template-columns: 1fr !important; gap: 24px !important; } .project-card { min-height: 0 !important; padding: 16px !important; } .project-card img, .project-card .card-image, .project-card .image-placeholder, .project-card video, .project-card .card-video { height: 220px !important; } }
