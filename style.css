@@ -426,3 +426,49 @@ h2 {
   background: linear-gradient(180deg, #ed48c5 0%, #df1eae 35%, #bd078b 70%, #85005d 100%);
 }
 
+
+
+/* ===== AXIS COMPARISON IMAGE ROW ===== */
+
+.axis-image-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  width: 100%;
+  margin: 30px 0;
+  align-items: stretch;
+}
+
+.axis-image-row img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: var(--paper);
+  border-radius: 12px;
+  border: 1px solid rgba(20, 33, 61, 0.15);
+  box-shadow: 0 4px 12px rgba(122, 0, 61, 0.15);
+}
+
+/* Keep the video inside the project card */
+.project-card .video-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 0 20px;
+  aspect-ratio: 16 / 9;
+}
+
+/* Tablet and mobile */
+@media (max-width: 700px) {
+  .axis-image-row {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .axis-image-row img {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+}
