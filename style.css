@@ -105,18 +105,18 @@ h2{font-size:42px;line-height:1;margin:0 0 16px;font-weight:400}
 /* Video inside project cards */
 .card-video {
   display: block;
-  width: 100%;
-  height: 720px;
-  max-width: 100%;
+  height: 600px;
+  max-width: 90%;
   object-fit: cover;
   border-radius: 8px;
 }
 
 /* Image placeholders for other cards */
-.gard.image,
+.card-image,
+.card.image,
 .image-placeholder {
-  width: 100%;
-  height: 720px;
+  width: 90%;
+  height: 600px;
   box-sizing: border-box;
     border-radius: 8px;
   background: #d9d9d9;
@@ -141,7 +141,7 @@ h2{font-size:42px;line-height:1;margin:0 0 16px;font-weight:400}
   }
 
   .card-video {
-    height: 740px;
+    height: 600px;
   }
 }
 
