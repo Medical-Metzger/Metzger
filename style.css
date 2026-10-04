@@ -553,3 +553,142 @@ h2 {
     max-height: 55vh;
   }
 }
+
+
+
+
+
+/* Image gallery overlay */
+.image-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  box-sizing: border-box;
+  padding: 30px;
+  background: rgba(20, 10, 25, 0.94);
+  overflow-y: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-lightbox.open {
+  display: flex;
+}
+
+/* Enlarged image and description */
+.lightbox-content {
+  width: 100%;
+  max-width: 1100px;
+  text-align: center;
+  color: white;
+}
+
+.lightbox-content img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 65vh;
+  margin: 0 auto 20px;
+  object-fit: contain;
+}
+
+.lightbox-content h2 {
+  margin: 10px 0;
+  color: #ffb5f7;
+}
+
+.lightbox-content p {
+  max-width: 750px;
+  margin: 0 auto;
+  color: white;
+  line-height: 1.6;
+}
+
+/* Close button */
+.lightbox-close {
+  position: fixed;
+  top: 15px;
+  right: 25px;
+  z-index: 1002;
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 42px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* Previous and next arrows */
+.lightbox-arrow {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--burgundy, #c8005d);
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.lightbox-arrow:hover {
+  background: var(--burgundy-dark, #7a003d);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.lightbox-prev {
+  left: 20px;
+}
+
+.lightbox-next {
+  right: 20px;
+}
+
+.lightbox-close:focus-visible,
+.lightbox-arrow:focus-visible {
+  outline: 3px solid #ffb5f7;
+  outline-offset: 4px;
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+  .image-lightbox {
+    padding: 20px;
+  }
+
+  .lightbox-content img {
+    max-height: 55vh;
+  }
+
+  .lightbox-content {
+    padding-bottom: 65px;
+  }
+
+  .lightbox-arrow {
+    top: auto;
+    bottom: 15px;
+    transform: none;
+  }
+
+  .lightbox-arrow:hover {
+    transform: scale(1.08);
+  }
+
+  .lightbox-prev {
+    left: calc(50% - 60px);
+  }
+
+  .lightbox-next {
+    right: calc(50% - 60px);
+  }
+}
