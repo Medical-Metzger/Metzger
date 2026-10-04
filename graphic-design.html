@@ -23,6 +23,249 @@
       <h1>Graphic Design</h1>
       <p class="lead">Graphic design portfolio</p>
     </section>
+
+
+
+
+
+  
+
+    <!-- Medical image gallery -->
+    <section
+      class="axis-image-row"
+      aria-label="Medical image gallery">
+
+      <img
+        src="medical%20illustration/axis/verticalaxisoutput.PNG"
+        alt="Vertical axis visualisation of heart anatomy"
+        data-title="Vertical Axis"
+        data-description="A visualisation of heart anatomy using SPECT imaging data."
+        loading="lazy">
+
+      <img
+        src="medical%20illustration/axis/shortaxisoutput.png"
+        alt="Short axis visualisation of heart anatomy"
+        data-title="Short Axis"
+        data-description="A short-axis view of the anatomical data."
+        loading="lazy">
+
+      <img
+        src="medical%20illustration/axis/horizontalaxisoutput.PNG"
+        alt="Horizontal axis visualisation of heart anatomy"
+        data-title="Horizontal Axis"
+        data-description="A horizontal-axis view of the anatomical data."
+        loading="lazy">
+
+    </section>
+
+    <!-- Image lightbox -->
+    <div
+      id="image-lightbox"
+      class="image-lightbox"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Image details">
+
+      <button
+        type="button"
+        class="lightbox-close"
+        aria-label="Close image">
+        &times;
+      </button>
+
+      <button
+        type="button"
+        class="lightbox-arrow lightbox-prev"
+        aria-label="Previous image">
+        &#10094;
+      </button>
+
+      <button
+        type="button"
+        class="lightbox-arrow lightbox-next"
+        aria-label="Next image">
+        &#10095;
+      </button>
+
+      <div class="lightbox-content">
+        <img id="lightbox-image" src="" alt="">
+        <h2 id="lightbox-title"></h2>
+        <p id="lightbox-description"></p>
+      </div>
+
+    </div>
+
+    <!-- Back link -->
+    <div class="back">
+      <a
+        href="index.html"
+        onclick="if (document.referrer && new URL(document.referrer).origin === location.origin) { history.back(); return false; }">
+        ← Back
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Gallery JavaScript -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const lightbox = document.getElementById("image-lightbox");
+      const lightboxImage = document.getElementById("lightbox-image");
+      const lightboxTitle = document.getElementById("lightbox-title");
+      const lightboxDescription = document.getElementById("lightbox-description");
+      const closeButton = document.querySelector(".lightbox-close");
+      const previousButton = document.querySelector(".lightbox-prev");
+      const nextButton = document.querySelector(".lightbox-next");
+
+      const galleryImages = Array.from(
+        document.querySelectorAll(".axis-image-row img")
+      );
+
+      if (
+        !lightbox ||
+        !lightboxImage ||
+        !lightboxTitle ||
+        !lightboxDescription ||
+        !closeButton ||
+        !previousButton ||
+        !nextButton ||
+        galleryImages.length === 0
+      ) {
+        return;
+      }
+
+      let currentIndex = 0;
+      let previousFocus = null;
+
+      function showImage(index) {
+        currentIndex =
+          (index + galleryImages.length) % galleryImages.length;
+
+        const img = galleryImages[currentIndex];
+
+        lightboxImage.src = img.src;
+        lightboxImage.alt = img.alt;
+
+        lightboxTitle.textContent =
+          img.dataset.title || img.alt;
+
+        lightboxDescription.textContent =
+          img.dataset.description || "";
+
+        lightbox.setAttribute(
+          "aria-label",
+          (img.dataset.title || img.alt) +
+          ", image " + (currentIndex + 1) +
+          " of " + galleryImages.length
+        );
+      }
+
+      function openLightbox(index) {
+        previousFocus = document.activeElement;
+
+        showImage(index);
+
+        lightbox.classList.add("open");
+        lightbox.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+
+        closeButton.focus();
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove("open");
+        lightbox.setAttribute("aria-hidden", "true");
+
+        lightboxImage.src = "";
+        document.body.style.overflow = "";
+
+        if (previousFocus) {
+          previousFocus.focus();
+        }
+      }
+
+      galleryImages.forEach(function (img, index) {
+        img.style.cursor = "pointer";
+        img.setAttribute("tabindex", "0");
+        img.setAttribute("role", "button");
+
+        img.setAttribute(
+          "aria-label",
+          "View " + (img.dataset.title || img.alt)
+        );
+
+        img.addEventListener("click", function () {
+          openLightbox(index);
+        });
+
+        img.addEventListener("keydown", function (event) {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            openLightbox(index);
+          }
+        });
+      });
+
+      closeButton.addEventListener("click", closeLightbox);
+
+      previousButton.addEventListener("click", function () {
+        showImage(currentIndex - 1);
+      });
+
+      nextButton.addEventListener("click", function () {
+        showImage(currentIndex + 1);
+      });
+
+      lightbox.addEventListener("click", function (event) {
+        if (event.target === lightbox) {
+          closeLightbox();
+        }
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (!lightbox.classList.contains("open")) {
+          return;
+        }
+
+        if (event.key === "ArrowRight") {
+          event.preventDefault();
+          showImage(currentIndex + 1);
+        }
+
+        if (event.key === "ArrowLeft") {
+          event.preventDefault();
+          showImage(currentIndex - 1);
+        }
+
+        if (event.key === "Escape") {
+          closeLightbox();
+        }
+      });
+
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <section class="project-grid">
       <article class="project-card">
         <a href="sanctuary.html" class="project-link">
@@ -30,22 +273,6 @@
           <h2>Sanctuary</h2>
           <p>The brand identity of a grassroots club night.</p>
         </a>
-      </article>
-
-      <article class="project-card">
-        <div class="image-placeholder">Image</div>
-        <h2>Graphic Design</h2>
-        <p>Project content placeholder.</p>
-      </article>
-      <article class="project-card">
-        <div class="image-placeholder">Image</div>
-        <h2>Selected work</h2>
-        <p>Project content placeholder.</p>
-      </article>
-      <article class="project-card">
-        <div class="image-placeholder">Image</div>
-        <h2>More work</h2>
-        <p>Project content placeholder.</p>
       </article>
     </section>
 
