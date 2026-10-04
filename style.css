@@ -1,5 +1,6 @@
 :root {
   --pink: #ff9bfa;
+  --pink-light: #ffb5f7; 
   --ink: #14213d;
   --burgundy: #c8005d;
   --burgundy-dark: #7a003d;
@@ -16,7 +17,7 @@ html {
 
 body {
   margin: 0;
-  background: var(--pink);
+  background: var(--pink-light);
   color: var(--ink);
   font-family: Georgia, "Times New Roman", serif
 }
