@@ -695,12 +695,12 @@ h3 {
 
 /* Dark pink-purple-grey sides */
 body {
-  background: #887080;
+  background: #98255d;
 }
 
 /* Keep the main content area light pink */
 main {
-  background: var(--raspberry, #98255d);
+  background: var(--light-pink, #e7c3df);
   max-width: 1400px;
   margin: 0 auto;
   min-height: 100vh;
