@@ -429,40 +429,45 @@ h2 {
 
 
 
-/* Two rows of three medical images */
+
+
+/* Two rows of three large medical images */
 .axis-image-row {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
+  gap: 16px;
   width: 100%;
-  max-width: 1120px;
-  margin: 30px auto;
-  align-items: stretch;
+  max-width: 1400px;
+  margin: 40px auto;
+  align-items: center;
 }
 
 .axis-image-row img {
   display: block;
   width: 100%;
-  height: 260px;
+  height: 360px;
   min-width: 0;
   object-fit: contain;
-  box-sizing: border-box;
-  padding: 8px;
-  background: var(--paper);
-  border: 1px solid rgba(20, 33, 61, 0.15);
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(122, 0, 61, 0.15);
+
+  /* Remove the white image frame */
+  background: transparent;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
 }
 
-/* Tablet and mobile */
+/* Responsive layout for tablets and phones */
 @media (max-width: 700px) {
   .axis-image-row {
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 24px;
   }
 
   .axis-image-row img {
     height: auto;
+    max-height: 500px;
     aspect-ratio: 4 / 3;
   }
 }
+
