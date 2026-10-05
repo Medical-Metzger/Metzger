@@ -100,9 +100,12 @@ a {
 }
 
 main {
+  background: var(--light-pink, #e7c3df);
   width: min(1120px, calc(100% - 40px));
   margin: 0 auto;
-  padding: 20px 0 110px
+  padding: 20px 30px 110px;
+  min-height: 100vh;
+  box-shadow: 0 0 35px rgba(55, 30, 50, 0.18);
 }
 
 .hero {
@@ -198,102 +201,128 @@ h3 {
 }
 
 
-/* ===== FEATURED PORTFOLIO GRID ===== */
+/* ========================================
+   FEATURED WORK — PROJECT GRID
+======================================== */
+
 .project-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 32px;
+  gap: 30px;
   width: 100%;
   max-width: 1120px;
-  height: auto;
-  margin: 40px 0;
+  margin: 40px auto;
   align-items: stretch;
 }
 
-/* Individual project cards */
+/* Project cards */
 .project-card {
   display: block;
   width: 100%;
   min-width: 0;
   height: auto;
   min-height: 0;
-  padding: 24px;
+  padding: 20px;
   margin: 0;
-  background: var(--paper);
-  border: 1px solid rgba(20, 33, 61, 0.15);
-  border-radius: 16px;
-  overflow: visible;
-  transition: transform 0.2s ease;
+  border: 1px solid rgba(200, 0, 93, 0.12);
+  border-radius: 22px;
+
+  background: linear-gradient(
+    145deg,
+    #fffaff 0%,
+    #fff0fa 55%,
+    #f9dced 100%
+  );
+
+  box-shadow:
+    0 8px 22px rgba(83, 0, 48, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+/* Hover effect */
 .project-card:hover {
   transform: translateY(-5px);
+
+  box-shadow:
+    0 15px 30px rgba(83, 0, 48, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
 }
 
-/* Make the entire card clickable */
-.project-link {
+/* Make project links consistent */
+.project-card .project-link {
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
-  color: var(--ink);
+  color: inherit;
   text-decoration: none;
 }
 
-/* Large video and image previews */
+/* Video and image previews */
 .project-card .card-video,
 .project-card .card-image {
   display: block;
   width: 100%;
   max-width: 100%;
+  aspect-ratio: 16 / 10;
   height: auto;
-  aspect-ratio: 16 / 9;
   object-fit: cover;
-  border-radius: 12px;
-  background: #d9d9d9;
+  border-radius: 14px;
+  background: #f7e5f1;
+
+  box-shadow: 0 4px 12px rgba(83, 0, 48, 0.12);
 }
 
 /* Project titles */
 .project-card .project-link h2 {
-  display: block;
-  font-size: clamp(24px, 2.2vw, 32px);
+  margin: 18px 0 9px;
+  padding: 0;
+  color: #7a003d;
+  font-size: clamp(21px, 2vw, 28px);
   line-height: 1.2;
-  font-weight: 400;
-  margin: 22px 0 12px;
-  color: var(--ink);
-}
-
-.project-card .project-link:hover h2 {
-  text-decoration: underline;
-  text-underline-offset: 5px;
+  font-weight: 600;
 }
 
 /* Project descriptions */
 .project-card .project-link p {
-  display: block;
-  font-size: 19px;
-  line-height: 1.5;
-  margin: 0 0 8px;
-  color: var(--ink);
+  margin: 0 0 5px;
+  padding: 0;
+  color: #4e2940;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
-/* Tablet and mobile */
+/* Title hover */
+.project-card .project-link:hover h2 {
+  color: #c8005d;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+/* Mobile layout */
 @media (max-width: 700px) {
   .project-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 22px;
   }
 
   .project-card {
-    padding: 18px;
+    padding: 15px;
+    border-radius: 18px;
+  }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .project-card {
+    transition: none;
   }
 
-  .project-card .project-link h2 {
-    font-size: 26px;
-  }
-
-  .project-card .project-link p {
-    font-size: 17px;
+  .project-card:hover {
+    transform: none;
   }
 }
 
@@ -462,79 +491,6 @@ h3 {
   transform: scale(1.03);
 }
 
-/* Full-screen image display */
-.image-lightbox {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 1000;
-  padding: 30px;
-  box-sizing: border-box;
-  background: rgba(20, 10, 25, 0.92);
-  overflow-y: auto;
-  align-items: center;
-  justify-content: center;
-}
-
-.image-lightbox.open {
-  display: flex;
-}
-
-.lightbox-content {
-  width: 100%;
-  max-width: 1000px;
-  text-align: center;
-  color: white;
-}
-
-.lightbox-content img {
-  display: block;
-  max-width: 100%;
-  max-height: 65vh;
-  width: auto;
-  height: auto;
-  margin: 0 auto 20px;
-  object-fit: contain;
-}
-
-.lightbox-content h2 {
-  margin: 10px 0;
-  color: #ffb5f7;
-}
-
-.lightbox-content p {
-  max-width: 750px;
-  margin: 0 auto;
-  line-height: 1.6;
-  color: white;
-}
-
-.lightbox-close {
-  position: fixed;
-  top: 15px;
-  right: 25px;
-  border: none;
-  background: transparent;
-  color: white;
-  font-size: 42px;
-  cursor: pointer;
-  line-height: 1;
-}
-
-@media (max-width: 700px) {
-  .image-lightbox {
-    padding: 20px;
-  }
-
-  .lightbox-content img {
-    max-height: 55vh;
-  }
-}
-
-
-
-
-
 /* Image gallery overlay */
 .image-lightbox {
   display: none;
@@ -675,17 +631,6 @@ body {
   background: #98255d;
 }
 
-/* Keep the main content area light pink */
-main {
-  background: var(--light-pink, #e7c3df);
-  max-width: 1400px;
-  margin: 0 auto;
-  min-height: 100vh;
-  box-shadow: 0 0 35px rgba(55, 30, 50, 0.18);
-
-}
-
-
 /* Medical Art gallery: two projects per row, no card borders */
 .medical-gallery {
   display: grid;
@@ -798,123 +743,5 @@ main {
 
   .project-card > p {
     font-size: 17px;
-  }
-}
-
-
-
-
-/* ========================================
-   FEATURED WORK — PROJECT GRID
-======================================== */
-
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 30px;
-  align-items: stretch;
-}
-
-/* Project cards */
-.project-card {
-  min-width: 0;
-  padding: 20px;
-  border: 1px solid rgba(200, 0, 93, 0.12);
-  border-radius: 22px;
-
-  background: linear-gradient(
-    145deg,
-    #fffaff 0%,
-    #fff0fa 55%,
-    #f9dced 100%
-  );
-
-  box-shadow:
-    0 8px 22px rgba(83, 0, 48, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.95);
-
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-/* Hover effect */
-.project-card:hover {
-  transform: translateY(-5px);
-
-  box-shadow:
-    0 15px 30px rgba(83, 0, 48, 0.18),
-    inset 0 1px 0 rgba(255, 255, 255, 1);
-}
-
-/* Make project links consistent */
-.project-card .project-link {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  color: inherit;
-  text-decoration: none;
-}
-
-/* Video and image previews */
-.project-card .card-video,
-.project-card .card-image {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  height: auto;
-  object-fit: cover;
-  border-radius: 14px;
-  background: #f7e5f1;
-
-  box-shadow: 0 4px 12px rgba(83, 0, 48, 0.12);
-}
-
-/* Project titles */
-.project-card .project-link h2 {
-  margin: 18px 0 9px;
-  padding: 0;
-  color: #7a003d;
-  font-size: clamp(21px, 2vw, 28px);
-  line-height: 1.2;
-  font-weight: 600;
-}
-
-/* Project descriptions */
-.project-card .project-link p {
-  margin: 0 0 5px;
-  padding: 0;
-  color: #4e2940;
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-/* Title hover */
-.project-card .project-link:hover h2 {
-  color: #c8005d;
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 4px;
-}
-
-/* Mobile layout */
-@media (max-width: 700px) {
-  .project-grid {
-    grid-template-columns: 1fr;
-    gap: 22px;
-  }
-
-  .project-card {
-    padding: 15px;
-    border-radius: 18px;
-  }
-}
-
-/* Reduced motion accessibility */
-@media (prefers-reduced-motion: reduce) {
-  .project-card {
-    transition: none;
-  }
-
-  .project-card:hover {
-    transform: none;
   }
 }
