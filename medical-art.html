@@ -39,74 +39,67 @@
     </section>
 
 
-    <!-- Axis Comparison project and image -->
-
-    <section class="project-grid">
-
-      <!-- Cannula landscape image -->
-
-<section
-  class="landscape-image"
-  aria-label="Medical image">
-
+  <!-- Cannula landscape image -->
+<section class="landscape-image" aria-label="Medical image">
   <img
     src="medical%20illustration/Cannula_insertion.PNG"
-    alt="Cannula insertion Illustration"
+    alt="Cannula insertion illustration"
     data-title="Cannula Insertion"
     data-description="A visualisation of cannula insertion procedure. Gloves coloured purple to reflect what I saw during my direct observation of clinical practice."
     loading="lazy">
-
 </section>
 
 
-<!-- Axis Comparison project and image -->
-
+<!-- Axis Comparison project and heart image -->
 <section class="project-grid">
 
-      <!-- Axis Comparison project card -->
-      <article class="project-card">
+  <!-- Axis Comparison project card -->
+  <article class="project-card">
 
-        <a href="axiscomparison.html" class="project-link">
+    <a href="axiscomparison.html" class="project-link">
 
-          <video
-            class="card-video"
-            autoplay
-            loop
-            muted
-            playsinline
-            aria-label="Preview of the Axis Comparison project">
+      <video
+        class="card-video"
+        autoplay
+        loop
+        muted
+        playsinline
+        aria-label="Preview of the Axis Comparison project">
 
-            <source
-              src="medical illustration/axis/axis_thumbnail.mp4"
-              type="video/mp4">
+        <source
+          src="medical illustration/axis/axis_thumbnail.mp4"
+          type="video/mp4">
 
-            Your browser does not support video playback.
+        Your browser does not support video playback.
 
-          </video>
+      </video>
 
-          <h2>Axis Comparison</h2>
+      <h2>Axis Comparison</h2>
 
-        </a>
+    </a>
 
-        <p>
-          A visualisation of single photon emission computed
-          tomography (SPECT) output.
-        </p>
+    <p>
+      A visualisation of single photon emission computed
+      tomography (SPECT) output.
+    </p>
 
-      </article>
+  </article>
 
 
-      <!-- Heart image beside the project card -->
-     <div class="gallery-image-card">
-  <img
-    class="gallery-image"
-    src="medical%20illustration/axis/transparent-heart.PNG"
-    alt="Transparent heart illustration"
-    data-title="Heart Illustration"
-    data-description="A medical illustration of the heart."
-    loading="lazy">
-</div>
+  <!-- Heart image beside the project card -->
+  <div class="gallery-image-card">
 
+    <img
+      class="gallery-image"
+      src="medical%20illustration/axis/transparent-heart.PNG"
+      alt="Transparent heart illustration"
+      data-title="Heart Illustration"
+      data-description="A medical illustration of the heart."
+      loading="lazy">
+
+  </div>
+
+</section>
     </section>
     <!-- Medical image gallery -->
 
@@ -235,11 +228,10 @@
       */
 
       const galleryImages = Array.from(
-        document.querySelectorAll(
-          ".axis-image-row img, .gallery-image"
-        )
-      );
-
+  document.querySelectorAll(
+    ".axis-image-row img, .gallery-image, .landscape-image img"
+  )
+);
 
       if (
         !lightbox ||
