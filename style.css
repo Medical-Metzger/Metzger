@@ -132,7 +132,7 @@ h1 {
    padding-left: 30px;
   font-size: clamp(56px, 9vw, 110px);
   line-height: .92;
-  letter-spacing: -3px;
+  letter-spacing: 1px;
   font-weight: 400;
   margin: 0 0 16px
 }
