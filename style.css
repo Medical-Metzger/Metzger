@@ -113,19 +113,19 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 900px
+  max-width: 900px;
 }
 
 .hero.compact {
-  min-height: 48vh
+  min-height: 48vh;
 }
 
 .eyebrow {
-  style="color: #c8005d;
-   padding-left: 30px;
+  color: #c8005d;
+  padding-left: 30px;
   font-size: 18px;
   letter-spacing: 1px;
-  margin: 0 0 18px
+  margin: 0 0 18px;
 }
 
 h1 {
