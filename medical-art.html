@@ -38,7 +38,7 @@
     </section>
 
 
-    <!-- Axis Comparison project and gallery image -->
+    <!-- Axis Comparison project and image -->
 
     <section class="project-grid">
 
@@ -68,19 +68,19 @@
         </a>
 
         <p>
-          A visualisation of single photon emission computed tomography
-          (SPECT) output.
+          A visualisation of single photon emission computed
+          tomography (SPECT) output.
         </p>
 
       </article>
 
 
-      <!-- Image beside project card -->
-      <div class="project-card image-only">
+      <!-- Heart image beside the project card -->
+      <div class="gallery-image-card">
 
         <img
-          class="card-image gallery-image"
-         src="medical%20illustration/axis/transparent-heart.png"
+          class="gallery-image"
+          src="axis/transparent-heart.png"
           alt="Transparent heart illustration"
           data-title="Heart Illustration"
           data-description="A medical illustration of the heart."
@@ -214,11 +214,9 @@
         document.querySelector(".lightbox-next");
 
 
-      /*
-        Includes both:
-
-        1. The three images in the medical gallery
-        2. The heart image beside the project card
+      /* 
+        Includes the three gallery images
+        AND the heart image beside the project card.
       */
 
       const galleryImages = Array.from(
