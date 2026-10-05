@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 
@@ -26,37 +25,74 @@
 
     <!-- Page heading -->
     <section class="hero compact">
+
       <p class="eyebrow">
         <a href="index.html">Home</a> //
         <a href="medical-art.html">Medical Art</a>
       </p>
 
       <h1>Medical Art</h1>
+
       <p class="lead">Medical art portfolio</p>
+
     </section>
 
-    <!-- Axis Comparison project preview -->
-   
-    
+
+    <!-- Axis Comparison project and gallery image -->
+
+    <section class="project-grid">
+
+      <!-- Axis Comparison project card -->
+      <article class="project-card">
+
+        <a href="axiscomparison.html" class="project-link">
+
+          <video
+            class="card-video"
+            autoplay
+            loop
+            muted
+            playsinline
+            aria-label="Preview of the Axis Comparison project">
+
+            <source
+              src="medical illustration/axis/axis_thumbnail.mp4"
+              type="video/mp4">
+
+            Your browser does not support video playback.
+
+          </video>
+
+          <h2>Axis Comparison</h2>
+
+        </a>
+
+        <p>
+          A visualisation of single photon emission computed tomography
+          (SPECT) output.
+        </p>
+
+      </article>
 
 
-<section class="project-grid">
-  <article class="project-card">
-    <a href="axiscomparison.html" class="project-link">
+      <!-- Image beside project card -->
+      <div class="project-card image-only">
 
-   
-      <video class="card-video" autoplay loop muted playsinline>
-        aria-label="Preview of the Axis Comparison project">
-         <source src="medical illustration/axis/axis_thumbnail.mp4" type="video/mp4"> </video>
-     <h2>Axis Comparison</h2>
-      <p> A visualisation of single photon emission computed tomography (SPECT) output.</p>
-    </a>
-  </article>
-</section>
+        <img
+          class="card-image gallery-image"
+         src="medical%20illustration/axis/transparent-heart.png"
+          alt="Transparent heart illustration"
+          data-title="Heart Illustration"
+          data-description="A medical illustration of the heart."
+          loading="lazy">
 
-  
+      </div>
+
+    </section>
+
 
     <!-- Medical image gallery -->
+
     <section
       class="axis-image-row"
       aria-label="Medical image gallery">
@@ -84,7 +120,9 @@
 
     </section>
 
+
     <!-- Image lightbox -->
+
     <div
       id="image-lightbox"
       class="image-lightbox"
@@ -115,39 +153,80 @@
       </button>
 
       <div class="lightbox-content">
-        <img id="lightbox-image" src="" alt="">
+
+        <img
+          id="lightbox-image"
+          src=""
+          alt="">
+
         <h2 id="lightbox-title"></h2>
+
         <p id="lightbox-description"></p>
+
       </div>
 
     </div>
 
+
     <!-- Back link -->
+
     <div class="back">
+
       <a
         href="index.html"
-        onclick="if (document.referrer && new URL(document.referrer).origin === location.origin) { history.back(); return false; }">
+        onclick="if (document.referrer && new URL(document.referrer).origin === location.origin) {
+          history.back();
+          return false;
+        }">
         ← Back
       </a>
+
     </div>
 
   </main>
 
+
   <!-- Gallery JavaScript -->
+
   <script>
+
     document.addEventListener("DOMContentLoaded", function () {
 
-      const lightbox = document.getElementById("image-lightbox");
-      const lightboxImage = document.getElementById("lightbox-image");
-      const lightboxTitle = document.getElementById("lightbox-title");
-      const lightboxDescription = document.getElementById("lightbox-description");
-      const closeButton = document.querySelector(".lightbox-close");
-      const previousButton = document.querySelector(".lightbox-prev");
-      const nextButton = document.querySelector(".lightbox-next");
+      const lightbox =
+        document.getElementById("image-lightbox");
+
+      const lightboxImage =
+        document.getElementById("lightbox-image");
+
+      const lightboxTitle =
+        document.getElementById("lightbox-title");
+
+      const lightboxDescription =
+        document.getElementById("lightbox-description");
+
+      const closeButton =
+        document.querySelector(".lightbox-close");
+
+      const previousButton =
+        document.querySelector(".lightbox-prev");
+
+      const nextButton =
+        document.querySelector(".lightbox-next");
+
+
+      /*
+        Includes both:
+
+        1. The three images in the medical gallery
+        2. The heart image beside the project card
+      */
 
       const galleryImages = Array.from(
-        document.querySelectorAll(".axis-image-row img")
+        document.querySelectorAll(
+          ".axis-image-row img, .gallery-image"
+        )
       );
+
 
       if (
         !lightbox ||
@@ -162,116 +241,248 @@
         return;
       }
 
+
       let currentIndex = 0;
       let previousFocus = null;
 
+
       function showImage(index) {
+
         currentIndex =
-          (index + galleryImages.length) % galleryImages.length;
+          (index + galleryImages.length) %
+          galleryImages.length;
 
-        const img = galleryImages[currentIndex];
+        const img =
+          galleryImages[currentIndex];
 
-        lightboxImage.src = img.src;
-        lightboxImage.alt = img.alt;
+
+        lightboxImage.src =
+          img.src;
+
+        lightboxImage.alt =
+          img.alt;
+
 
         lightboxTitle.textContent =
-          img.dataset.title || img.alt;
+          img.dataset.title ||
+          img.alt;
+
 
         lightboxDescription.textContent =
-          img.dataset.description || "";
+          img.dataset.description ||
+          "";
+
 
         lightbox.setAttribute(
           "aria-label",
           (img.dataset.title || img.alt) +
-          ", image " + (currentIndex + 1) +
-          " of " + galleryImages.length
+          ", image " +
+          (currentIndex + 1) +
+          " of " +
+          galleryImages.length
         );
+
       }
 
+
       function openLightbox(index) {
-        previousFocus = document.activeElement;
+
+        previousFocus =
+          document.activeElement;
 
         showImage(index);
 
         lightbox.classList.add("open");
-        lightbox.setAttribute("aria-hidden", "false");
-        document.body.style.overflow = "hidden";
+
+        lightbox.setAttribute(
+          "aria-hidden",
+          "false"
+        );
+
+        document.body.style.overflow =
+          "hidden";
 
         closeButton.focus();
+
       }
 
+
       function closeLightbox() {
+
         lightbox.classList.remove("open");
-        lightbox.setAttribute("aria-hidden", "true");
+
+        lightbox.setAttribute(
+          "aria-hidden",
+          "true"
+        );
 
         lightboxImage.src = "";
-        document.body.style.overflow = "";
+
+        document.body.style.overflow =
+          "";
+
 
         if (previousFocus) {
           previousFocus.focus();
         }
+
       }
 
-      galleryImages.forEach(function (img, index) {
-        img.style.cursor = "pointer";
-        img.setAttribute("tabindex", "0");
-        img.setAttribute("role", "button");
 
-        img.setAttribute(
-          "aria-label",
-          "View " + (img.dataset.title || img.alt)
-        );
+      galleryImages.forEach(
+        function (img, index) {
 
-        img.addEventListener("click", function () {
-          openLightbox(index);
-        });
+          img.style.cursor =
+            "pointer";
 
-        img.addEventListener("keydown", function (event) {
-          if (event.key === "Enter" || event.key === " ") {
-            event.preventDefault();
-            openLightbox(index);
+          img.setAttribute(
+            "tabindex",
+            "0"
+          );
+
+          img.setAttribute(
+            "role",
+            "button"
+          );
+
+
+          img.setAttribute(
+            "aria-label",
+            "View " +
+            (img.dataset.title || img.alt)
+          );
+
+
+          img.addEventListener(
+            "click",
+            function () {
+
+              openLightbox(index);
+
+            }
+          );
+
+
+          img.addEventListener(
+            "keydown",
+            function (event) {
+
+              if (
+                event.key === "Enter" ||
+                event.key === " "
+              ) {
+
+                event.preventDefault();
+
+                openLightbox(index);
+
+              }
+
+            }
+          );
+
+        }
+      );
+
+
+      closeButton.addEventListener(
+        "click",
+        closeLightbox
+      );
+
+
+      previousButton.addEventListener(
+        "click",
+        function () {
+
+          showImage(
+            currentIndex - 1
+          );
+
+        }
+      );
+
+
+      nextButton.addEventListener(
+        "click",
+        function () {
+
+          showImage(
+            currentIndex + 1
+          );
+
+        }
+      );
+
+
+      lightbox.addEventListener(
+        "click",
+        function (event) {
+
+          if (
+            event.target === lightbox
+          ) {
+
+            closeLightbox();
+
           }
-        });
-      });
 
-      closeButton.addEventListener("click", closeLightbox);
-
-      previousButton.addEventListener("click", function () {
-        showImage(currentIndex - 1);
-      });
-
-      nextButton.addEventListener("click", function () {
-        showImage(currentIndex + 1);
-      });
-
-      lightbox.addEventListener("click", function (event) {
-        if (event.target === lightbox) {
-          closeLightbox();
         }
-      });
+      );
 
-      document.addEventListener("keydown", function (event) {
-        if (!lightbox.classList.contains("open")) {
-          return;
-        }
 
-        if (event.key === "ArrowRight") {
-          event.preventDefault();
-          showImage(currentIndex + 1);
-        }
+      document.addEventListener(
+        "keydown",
+        function (event) {
 
-        if (event.key === "ArrowLeft") {
-          event.preventDefault();
-          showImage(currentIndex - 1);
-        }
+          if (
+            !lightbox.classList.contains("open")
+          ) {
+            return;
+          }
 
-        if (event.key === "Escape") {
-          closeLightbox();
+
+          if (
+            event.key === "ArrowRight"
+          ) {
+
+            event.preventDefault();
+
+            showImage(
+              currentIndex + 1
+            );
+
+          }
+
+
+          if (
+            event.key === "ArrowLeft"
+          ) {
+
+            event.preventDefault();
+
+            showImage(
+              currentIndex - 1
+            );
+
+          }
+
+
+          if (
+            event.key === "Escape"
+          ) {
+
+            closeLightbox();
+
+          }
+
         }
-      });
+      );
 
     });
+
   </script>
 
 </body>
+
 </html>
