@@ -417,26 +417,26 @@ h3 {
 
 /* ========================================
    EMBEDDED YOUTUBE VIDEOS
-   Keep the frame, fill the frame
+   Fill more of the frame
 ======================================== */
 
 .video-container:has(iframe) {
-  padding: 10px;
+  padding: 4px;
 }
 
 .video-container:has(iframe) iframe {
   display: block;
   position: absolute;
-  inset: 10px;
-  width: calc(100% - 20px);
-  height: calc(100% - 20px);
+  inset: 4px;
+  width: calc(100% - 8px);
+  height: calc(100% - 8px);
   margin: 0;
   padding: 0;
   border: none;
   border-radius: 10px;
   box-sizing: border-box;
 }
-}
+
 /* ========================================
    IMAGE GALLERY
 ======================================== */
