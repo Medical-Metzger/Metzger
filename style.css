@@ -356,29 +356,20 @@ h3 {
 .project-card .video-container iframe {
   border-radius: 7px;
 }
-
 /* ========================================
    VIDEO CONTAINER
-======================================== */
-/* ========================================
-   VIDEO FRAME
 ======================================== */
 
 .video-container {
   position: relative;
-
   width: 100%;
   max-width: 900px;
   aspect-ratio: 16 / 9;
-
   margin: 40px auto;
-
   padding: 10px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   box-sizing: border-box;
 
   /* Silver frame */
@@ -407,22 +398,47 @@ h3 {
 
 
 /* ========================================
-   VIDEO INSIDE FRAME
+   NORMAL / LOCAL VIDEOS
 ======================================== */
 
 .video-container video {
   display: block;
-
   width: 100%;
   height: 100%;
-
-
   border-radius: 10px;
-
   margin: 0;
   padding: 0;
-
   box-sizing: border-box;
+}
+
+.video-container .normal-video {
+  object-fit: contain;
+}
+
+
+/* ========================================
+   EMBEDDED YOUTUBE VIDEOS
+   Removes the large frame
+======================================== */
+
+.video-container:has(iframe) {
+  padding: 0;
+  background: none;
+  border: none;
+  box-shadow: none;
+  border-radius: 10px;
+}
+
+.video-container:has(iframe) iframe {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 10px;
 }
 /* ========================================
    IMAGE GALLERY
@@ -444,6 +460,9 @@ h3 {
   border-radius: 12px;
   box-shadow: 0 4px 14px rgba(122, 0, 61, 0.25);
 }
+
+
+
 
 /* ========================================
    MEDICAL ART — AXIS IMAGE GALLERY
