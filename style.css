@@ -477,28 +477,28 @@ h3 {
 
 /* Two rows of three large medical images */
 .axis-image-row {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
+  columns: 3 280px;
+  column-gap: 20px;
   width: 100%;
-  max-width: 1400px;
-  margin: 40px auto;
-  align-items: center;
+  max-width: 1200px;
+  margin: 50px auto;
 }
 
 .axis-image-row img {
   display: block;
   width: 100%;
-  height: 360px;
-  min-width: 0;
-  object-fit: contain;
+  height: auto;
+  margin: 0 0 20px;
+  break-inside: avoid;
 
-  /* Remove the white image frame */
-  background: transparent;
-  padding: 0;
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
+  border-radius: 18px;
+  cursor: zoom-in;
+
+  transition: transform 0.25s ease;
+}
+
+.axis-image-row img:hover {
+  transform: scale(1.02);
 }
 
 /* Responsive layout for tablets and phones */
@@ -507,22 +507,13 @@ h3 {
     grid-template-columns: 1fr;
     gap: 24px;
   }
-
-  .axis-image-row img {
-    height: auto;
-    max-height: 500px;
-    aspect-ratio: 4 / 3;
-  }
 }
-
-
-
-
 
 /* Make gallery images selectable */
 .axis-image-row img {
   cursor: pointer;
   transition: transform 0.2s ease;
+}
 }
 
 .axis-image-row img:hover {
