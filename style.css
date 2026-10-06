@@ -719,7 +719,7 @@ h3 {
   background: var(--paper);
 
   /* Same border as navigation buttons */
-  border: 4px solid var(--burgundy-dark);
+  border: 4px solid var(--burgundy);
 
   box-shadow:
     0 12px 30px rgba(80, 20, 60, 0.12);
