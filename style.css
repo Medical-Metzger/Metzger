@@ -456,6 +456,29 @@ h3 {
 }
 
 
+/* Make the Axis and Heart cards match */
+.project-grid {
+  align-items: stretch;
+}
+
+.project-card,
+.gallery-image-card {
+  box-sizing: border-box;
+}
+
+.gallery-image-card {
+  position: relative;
+  align-self: stretch;
+  overflow: hidden;
+}
+
+.gallery-image-card .gallery-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 
 
 
@@ -922,21 +945,4 @@ body {
 
 .landscape-image:hover img {
   transform: scale(1.01);
-}
-
-.project-grid {
-  align-items: start;
-}
-
-.gallery-image-card {
-  align-self: start;
-  aspect-ratio: 16 / 10;
-  height: auto;
-  overflow: hidden;
-}
-
-.gallery-image-card .gallery-image {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
 }
