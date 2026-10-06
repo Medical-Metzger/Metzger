@@ -555,14 +555,53 @@ h3 {
   color: white;
 }
 
-.lightbox-content img {
+/* Dark fullscreen lightbox */
+.image-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+  box-sizing: border-box;
+
+  background: rgba(20, 10, 20, 0.94);
+}
+
+.image-lightbox.open {
+  display: flex;
+}
+
+/* Lightbox content */
+.lightbox-content {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 15px;
+}
+
+/* Selected image */
+#lightbox-image {
   display: block;
+
   width: auto;
   height: auto;
-  max-width: 100%;
-  max-height: 65vh;
-  margin: 0 auto 20px;
+
+  max-width: 95vw;
+  max-height: 85vh;
+
   object-fit: contain;
+
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
 }
 
 .lightbox-content h2 {
