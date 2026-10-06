@@ -946,3 +946,50 @@ body {
 .landscape-image:hover img {
   transform: scale(1.01);
 }
+/* =========================================
+   MEDICAL ART — PROJECT CARD LAYOUT
+   ========================================= */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+  align-items: stretch;
+}
+
+/* Both cards fill the same grid row */
+.project-card,
+.gallery-image-card {
+  box-sizing: border-box;
+  min-width: 0;
+  align-self: stretch;
+}
+
+/* Normal project card */
+.project-card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Keep the video at a consistent shape */
+.project-card .card-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Heart card */
+.gallery-image-card {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Heart image stays proportional inside the card */
+.gallery-image-card .gallery-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
