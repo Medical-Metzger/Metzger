@@ -1,6 +1,6 @@
 :root {
   --pink: #e5a0cd;
-  --pink-light: #ffb5f7; 
+  --pink-light: #ffb5f7;
   --ink: #14213d;
   --burgundy: #c8005d;
   --burgundy-dark: #7a003d;
@@ -9,23 +9,27 @@
 }
 
 * {
-  box-sizing: border-box
+  box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  background: var(--pink-light);
+  background: #98255d;
   color: var(--ink);
-  font-family: Georgia, "Times New Roman", serif
+  font-family: Georgia, "Times New Roman", serif;
 }
 
 a {
-  color: inherit
+  color: inherit;
 }
+
+/* ========================================
+   NAVIGATION
+======================================== */
 
 .site-nav {
   position: sticky;
@@ -36,7 +40,7 @@ a {
   display: flex;
   justify-content: center;
   gap: 10px;
-  flex-wrap: wrap
+  flex-wrap: wrap;
 }
 
 .site-nav a {
@@ -52,37 +56,51 @@ a {
   text-decoration: none;
   font-size: 15px;
   line-height: 1;
-  box-shadow: 1px 2px 4px rgba(192, 0, 205, .4)
+  box-shadow: 1px 2px 4px rgba(192, 0, 205, .4);
 }
-
 
 /* Red overlay on hover and active navigation buttons */
 .site-nav a:hover,
 .site-nav a.active {
+  background:
+    linear-gradient(
+      rgba(200, 0, 0, 0.65),
+      rgba(200, 0, 0, 0.65)
+    ),
+    linear-gradient(
+      180deg,
+      #ed48c5 0%,
+      #df1eae 35%,
+      #bd078b 70%,
+      #85005d 100%
+    ) !important;
+}
+
+/* Active portfolio category */
+.site-nav a[href="medical-art.html"].active,
+.site-nav a[href="3d-works.html"].active,
+.site-nav a[href="graphic-design.html"].active,
+.site-nav a[href="illustration.html"].active {
   background: linear-gradient(
-    rgba(200, 0, 0, 0.65),
-    rgba(200, 0, 0, 0.65)
-  ), linear-gradient(
     180deg,
     #ed48c5 0%,
     #df1eae 35%,
     #bd078b 70%,
     #85005d 100%
-  )!important;
+  );
 }
 
-
-
+/* ========================================
+   BUTTONS
+======================================== */
 
 .cute-button {
   padding-top: 12px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   width: fit-content;
   flex-shrink: 0;
-
   min-height: 29px;
   padding: 5px 13px;
   background: var(--burgundy);
@@ -136,6 +154,9 @@ a {
   filter: brightness(1.1);
 }
 
+/* ========================================
+   MAIN / TYPOGRAPHY
+======================================== */
 
 main {
   background: var(--light-pink, #e7c3df);
@@ -167,77 +188,48 @@ main {
 }
 
 h1 {
-   padding-left: 30px;
+  padding-left: 30px;
   font-size: clamp(56px, 9vw, 110px);
   line-height: .92;
   letter-spacing: 1px;
   font-weight: 400;
-  margin: 0 0 16px
+  margin: 0 0 16px;
 }
 
 h2 {
-   padding-left: 40px;
+  padding-left: 40px;
   font-size: 42px;
   line-height: 1;
   margin: 0 0 16px;
-  font-weight: 400
+  font-weight: 400;
 }
 
 h3 {
-   padding-left: 30px;
+  padding-left: 30px;
   font-size: 25px;
   letter-spacing: 1px;
-  margin: 0 0 18px
+  margin: 0 0 18px;
 }
 
 .lead {
-   padding-left: 30px;
+  padding-left: 30px;
   font-size: 24px;
   line-height: 1.25;
   max-width: 800px;
-  margin: 0
+  margin: 0;
 }
 
 .text-section {
-
   max-width: none;
   width: 100%;
-  padding: 40px 0
+  padding: 40px 0;
 }
 
 .back {
-   padding-left: 30px;
+  padding-left: 30px;
   margin-top: 40px;
-   font-size: 18px
+  font-size: 18px;
 }
-
-
-@media(max-width:600px) {
-  .site-nav {
-    justify-content: flex-start;
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    padding: 12px
-  }
-
-  .site-nav a {
-    flex: 0 0 auto
-  }
-
-  main {
-    width: min(100% - 24px, 1120px);
-    padding: 48px 0 80px
-  }
-
-  h1 {
-    letter-spacing: -2px
-  }
-
-  .lead {
-    font-size: 20px
-  }
-}
-
 
 /* ========================================
    FEATURED WORK — PROJECT GRID
@@ -255,14 +247,17 @@ h3 {
 
 /* Project cards */
 .project-card {
-  display: block;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   min-width: 0;
   height: auto;
   min-height: 0;
   padding: 20px;
   margin: 0;
-  border: 1px solid rgba(200, 0, 93, 0.12);
+
+  /* Same border as navigation buttons */
+  border: 4px solid var(--burgundy-dark);
   border-radius: 22px;
 
   background: linear-gradient(
@@ -309,7 +304,6 @@ h3 {
   object-fit: cover;
   border-radius: 14px;
   background: #f7e5f1;
-
   box-shadow: 0 4px 12px rgba(83, 0, 48, 0.12);
 }
 
@@ -340,30 +334,6 @@ h3 {
   text-underline-offset: 4px;
 }
 
-/* Mobile layout */
-@media (max-width: 700px) {
-  .project-grid {
-    grid-template-columns: 1fr;
-    gap: 22px;
-  }
-
-  .project-card {
-    padding: 15px;
-    border-radius: 18px;
-  }
-}
-
-/* Reduced motion accessibility */
-@media (prefers-reduced-motion: reduce) {
-  .project-card {
-    transition: none;
-  }
-
-  .project-card:hover {
-    transform: none;
-  }
-}
-
 /* Show the full NHS thumbnail without cropping */
 .project-card video[src],
 .project-card video:has(source[src*="nhs_thumbnail"]) {
@@ -378,14 +348,19 @@ h3 {
   aspect-ratio: 16 / 9;
   padding: 6px;
   border-radius: 12px;
-  box-shadow: 0 0 0 2px #c8005d, 0 4px 10px rgba(122, 0, 61, 0.25);
+  box-shadow:
+    0 0 0 2px #c8005d,
+    0 4px 10px rgba(122, 0, 61, 0.25);
 }
 
 .project-card .video-container iframe {
   border-radius: 7px;
 }
 
-/* Glossy silver and pink video frame */
+/* ========================================
+   VIDEO CONTAINER
+======================================== */
+
 .video-container {
   position: relative;
   display: block;
@@ -395,19 +370,19 @@ h3 {
   margin: 40px auto;
   padding: 10px;
 
-  /* Shiny silver frame */
-  background: linear-gradient(135deg,
-      #ffffff 0%,
-      #e8e8e8 15%,
-      #ffffff 30%,
-      #b8b8b8 50%,
-      #fdfdfd 70%,
-      #c8c8c8 100%);
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #e8e8e8 15%,
+    #ffffff 30%,
+    #b8b8b8 50%,
+    #fdfdfd 70%,
+    #c8c8c8 100%
+  );
 
   border: 2px solid #ffffff;
   border-radius: 16px;
 
-  /* Pink outline and glossy raised effect */
   box-shadow:
     0 0 0 4px #c8005d,
     0 0 14px rgba(200, 0, 93, 0.55),
@@ -430,9 +405,11 @@ h3 {
   border-radius: 10px;
 }
 
+/* ========================================
+   IMAGE GALLERY
+======================================== */
 
 .image-gallery {
-  
   align-items: center;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -441,7 +418,7 @@ h3 {
 }
 
 .image-gallery img {
-    align-items: center;
+  align-items: center;
   display: block;
   width: 100%;
   height: auto;
@@ -449,56 +426,10 @@ h3 {
   box-shadow: 0 4px 14px rgba(122, 0, 61, 0.25);
 }
 
-@media (max-width: 600px) {
-  .image-gallery {
-    grid-template-columns: 1fr;
-  }
-}
+/* ========================================
+   MEDICAL ART — AXIS IMAGE GALLERY
+======================================== */
 
-
-/* Make the Axis and Heart cards match */
-.project-grid {
-  align-items: stretch;
-}
-
-.project-card,
-.gallery-image-card {
-  box-sizing: border-box;
-}
-
-.gallery-image-card {
-  position: relative;
-  align-self: stretch;
-  overflow: hidden;
-}
-
-.gallery-image-card .gallery-image {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-
-
-
-
-
-
-/* Active portfolio category */
-.site-nav a[href="medical-art.html"].active,
-.site-nav a[href="3d-works.html"].active,
-.site-nav a[href="graphic-design.html"].active,
-.site-nav a[href="illustration.html"].active {
-  background: linear-gradient(180deg, #ed48c5 0%, #df1eae 35%, #bd078b 70%, #85005d 100%);
-}
-
-
-
-
-
-
-/* Two rows of three large medical images */
 .axis-image-row {
   columns: 3 280px;
   column-gap: 20px;
@@ -515,29 +446,10 @@ h3 {
   break-inside: avoid;
 
   border-radius: 18px;
-  cursor: zoom-in;
-
-  transition: transform 0.25s ease;
-}
-
-.axis-image-row img:hover {
-  transform: scale(1.02);
-}
-
-/* Responsive layout for tablets and phones */
-@media (max-width: 700px) {
-  .axis-image-row {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-}
-
-/* Make gallery images selectable */
-.axis-image-row img {
   cursor: pointer;
+
   transition: transform 0.2s ease;
 }
-
 
 .axis-image-row img:hover {
   transform: scale(1.03);
@@ -545,7 +457,7 @@ h3 {
 
 /* ========================================
    IMAGE LIGHTBOX
-   ======================================== */
+======================================== */
 
 .image-lightbox {
   position: fixed;
@@ -567,8 +479,6 @@ h3 {
   display: flex;
 }
 
-
-/* Lightbox content */
 .lightbox-content {
   width: 100%;
   height: 100%;
@@ -584,15 +494,12 @@ h3 {
   text-align: center;
 }
 
-
-/* Image inside lightbox */
 #lightbox-image {
   display: block;
 
   width: auto;
   height: auto;
 
-  /* Leave room for title + description */
   max-width: 90vw;
   max-height: 70vh;
 
@@ -604,8 +511,6 @@ h3 {
   flex-shrink: 1;
 }
 
-
-/* Title */
 .lightbox-content h2 {
   margin: 4px 0 0;
   padding: 0;
@@ -618,8 +523,6 @@ h3 {
   flex-shrink: 0;
 }
 
-
-/* Description */
 .lightbox-content p {
   max-width: 750px;
 
@@ -632,7 +535,6 @@ h3 {
 
   flex-shrink: 0;
 }
-
 
 /* Close button */
 .lightbox-close {
@@ -651,7 +553,6 @@ h3 {
 
   cursor: pointer;
 }
-
 
 /* Previous / next arrows */
 .lightbox-arrow {
@@ -699,7 +600,6 @@ h3 {
   right: 20px;
 }
 
-
 /* Keyboard focus */
 .lightbox-close:focus-visible,
 .lightbox-arrow:focus-visible {
@@ -707,58 +607,10 @@ h3 {
   outline-offset: 4px;
 }
 
-
 /* ========================================
-   LIGHTBOX — MOBILE
-   ======================================== */
+   MEDICAL ART GALLERY
+======================================== */
 
-@media (max-width: 600px) {
-
-  .image-lightbox {
-    padding: 55px 20px 85px;
-  }
-
-  #lightbox-image {
-    max-width: 92vw;
-    max-height: 58vh;
-  }
-
-  .lightbox-content h2 {
-    font-size: 23px;
-  }
-
-  .lightbox-content p {
-    font-size: 15px;
-    line-height: 1.4;
-    max-width: 90vw;
-  }
-
-  .lightbox-arrow {
-    top: auto;
-    bottom: 15px;
-
-    transform: none;
-  }
-
-  .lightbox-arrow:hover {
-    transform: scale(1.08);
-  }
-
-  .lightbox-prev {
-    left: calc(50% - 60px);
-  }
-
-  .lightbox-next {
-    right: calc(50% - 60px);
-  }
-}
-
-/* Dark pink-purple-grey sides */
-body {
-  background: #98255d;
-}
-
-/* Medical Art gallery: two projects per row, no card borders */
 .medical-gallery {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -806,20 +658,9 @@ body {
   line-height: 1.7;
 }
 
-/* Stack projects on smaller screens */
-@media (max-width: 700px) {
-  .medical-gallery {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    padding: 20px;
-  }
-}
-
-
-
-
-
-/* ===== AXIS COMPARISON PROJECT CARD ===== */
+/* ========================================
+   AXIS COMPARISON PROJECT CARD
+======================================== */
 
 .project-card .medical-project-link {
   display: flex;
@@ -862,17 +703,10 @@ body {
   text-underline-offset: 5px;
 }
 
-/* Mobile sizing */
-@media (max-width: 700px) {
-  .project-card .medical-project-link h2 {
-    font-size: 26px;
-  }
+/* ========================================
+   HEART / GALLERY IMAGE CARD
+======================================== */
 
-  .project-card > p {
-    font-size: 17px;
-  }
-}
-/* Image card with soft pink tinted overlay */
 .gallery-image-card {
   position: relative;
   width: 100%;
@@ -884,7 +718,8 @@ body {
   border-radius: 22px;
   background: var(--paper);
 
-  border: 1px solid rgba(200, 0, 93, 0.18);
+  /* Same border as navigation buttons */
+  border: 4px solid var(--burgundy-dark);
 
   box-shadow:
     0 12px 30px rgba(80, 20, 60, 0.12);
@@ -894,22 +729,19 @@ body {
     box-shadow 0.25s ease;
 }
 
-
-/* Image */
 .gallery-image-card .gallery-image {
   display: block;
   width: 100%;
   height: 100%;
   min-height: 0;
 
-  object-fit: cover;
+  object-fit: contain;
   cursor: zoom-in;
 
   transition:
     transform 0.25s ease,
     filter 0.25s ease;
 }
-
 
 /* Soft pink/magenta tint */
 .gallery-image-card::after {
@@ -924,7 +756,6 @@ body {
   transition:
     background 0.25s ease;
 }
-
 
 /* Slightly stronger effect when hovering */
 .gallery-image-card:hover {
@@ -945,6 +776,7 @@ body {
 /* ========================================
    LANDSCAPE IMAGE — FULL TWO-CARD WIDTH
 ======================================== */
+
 .landscape-image {
   width: 100%;
   max-width: 1100px;
@@ -982,67 +814,40 @@ body {
 .landscape-image:hover img {
   transform: scale(1.01);
 }
-/* =========================================
-   MEDICAL ART — PROJECT CARD LAYOUT
-   ========================================= */
-
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 30px;
-  align-items: stretch;
-}
-
-/* Both cards fill the same grid row */
-.project-card,
-.gallery-image-card {
-  box-sizing: border-box;
-  min-width: 0;
-  align-self: stretch;
-}
-
-/* Normal project card */
-.project-card {
-  display: flex;
-  flex-direction: column;
-}
-
-/* Keep the video at a consistent shape */
-.project-card .card-video {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  height: auto;
-  object-fit: cover;
-}
-
-/* Heart card */
-.gallery-image-card {
-  position: relative;
-  overflow: hidden;
-}
-
-/* Heart image stays proportional inside the card */
-.gallery-image-card .gallery-image {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-
 
 /* ========================================
-   MOBILE — ONE PROJECT TILE PER ROW
+   MOBILE
 ======================================== */
 
 @media (max-width: 700px) {
 
   .project-grid {
-    display: grid;
-    grid-template-columns: 1fr !important;
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .project-card {
+    padding: 15px;
+    border-radius: 18px;
+  }
+
+  .project-card .medical-project-link h2 {
+    font-size: 26px;
+  }
+
+  .project-card > p {
+    font-size: 17px;
+  }
+
+  .medical-gallery {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 20px;
+  }
+
+  .axis-image-row {
+    grid-template-columns: 1fr;
     gap: 24px;
-    width: 100%;
   }
 
   .project-grid > .project-card,
@@ -1051,5 +856,86 @@ body {
     max-width: 100%;
     grid-column: 1;
   }
+}
 
+@media (max-width: 600px) {
+
+  .site-nav {
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding: 12px;
+  }
+
+  .site-nav a {
+    flex: 0 0 auto;
+  }
+
+  main {
+    width: min(100% - 24px, 1120px);
+    padding: 48px 0 80px;
+  }
+
+  h1 {
+    letter-spacing: -2px;
+  }
+
+  .lead {
+    font-size: 20px;
+  }
+
+  .image-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .image-lightbox {
+    padding: 55px 20px 85px;
+  }
+
+  #lightbox-image {
+    max-width: 92vw;
+    max-height: 58vh;
+  }
+
+  .lightbox-content h2 {
+    font-size: 23px;
+  }
+
+  .lightbox-content p {
+    font-size: 15px;
+    line-height: 1.4;
+    max-width: 90vw;
+  }
+
+  .lightbox-arrow {
+    top: auto;
+    bottom: 15px;
+    transform: none;
+  }
+
+  .lightbox-arrow:hover {
+    transform: scale(1.08);
+  }
+
+  .lightbox-prev {
+    left: calc(50% - 60px);
+  }
+
+  .lightbox-next {
+    right: calc(50% - 60px);
+  }
+}
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card {
+    transition: none;
+  }
+
+  .project-card:hover {
+    transform: none;
+  }
 }
